@@ -1,0 +1,184 @@
+{
+  "catalog_metadata": {
+    "company": "Custom Cabinetry Project",
+    "standard_heights": {
+      "base": "34.5\"",
+      "wall_options": ["30\"", "36\"", "42\""],
+      "vanity": "34.5\""
+    },
+    "standard_depths": {
+      "base": "24\"",
+      "wall": "12\"",
+      "vanity": "21\"",
+      "pantry": "24\""
+    }
+  },
+  "categories": [
+    {
+      "name": "Standard Base Cabinets",
+      "prefix": "B",
+      "items": [
+        { "sku": "B09", "width": 9, "description": "Single full-height door base" },
+        { "sku": "B12", "width": 12, "description": "Single door, single top drawer base" },
+        { "sku": "B15", "width": 15, "description": "Single door, single top drawer base" },
+        { "sku": "B18", "width": 18, "description": "Single door, single top drawer base" },
+        { "sku": "B21", "width": 21, "description": "Single door, single top drawer base" },
+        { "sku": "B24", "width": 24, "description": "Double door, single top drawer base" },
+        { "sku": "B27", "width": 27, "description": "Double door, single top drawer base" },
+        { "sku": "B30", "width": 30, "description": "Double door, two top drawers base" },
+        { "sku": "B33", "width": 33, "description": "Double door, two top drawers base" },
+        { "sku": "B36", "width": 36, "description": "Double door, two top drawers base" },
+        { "sku": "B09SR", "width": 9, "type": "Specialty", "description": "Base cabinet with pull-out spice rack" },
+        { "sku": "BBC36", "width": 36, "type": "Corner", "description": "Blind Base Corner cabinet" },
+        { "sku": "BBC42", "width": 42, "type": "Corner", "description": "Blind Base Corner cabinet" },
+        { "sku": "LSB36", "width": 36, "type": "Corner", "description": "Lazy Susan corner base" }
+      ]
+    },
+    {
+      "name": "Drawer Base Cabinets",
+      "prefix": "DB",
+      "items": [
+        { "sku": "DB12-3", "width": 12, "description": "3-Drawer stack base cabinet" },
+        { "sku": "DB15-3", "width": 15, "description": "3-Drawer stack base cabinet" },
+        { "sku": "DB18-3", "width": 18, "description": "3-Drawer stack base cabinet" },
+        { "sku": "DB21-3", "width": 21, "description": "3-Drawer stack base cabinet" },
+        { "sku": "DB24-3", "width": 24, "description": "3-Drawer stack base cabinet" },
+        { "sku": "DB30-3", "width": 30, "description": "3-Drawer stack base cabinet" },
+        { "sku": "DB36-3", "width": 36, "description": "3-Drawer stack base cabinet" }
+      ]
+    },
+    {
+      "name": "Sink Base Cabinets",
+      "prefix": "SB / FSB",
+      "items": [
+        { "sku": "SB30", "width": 30, "type": "Sink Base", "description": "Standard double-door sink base" },
+        { "sku": "SB33", "width": 33, "type": "Sink Base", "description": "Standard double-door sink base" },
+        { "sku": "SB36", "width": 36, "type": "Sink Base", "description": "Standard double-door sink base" },
+        { "sku": "FSB36", "width": 36, "type": "Farmhouse Sink", "description": "Apron-front farmhouse sink base" }
+      ]
+    },
+    {
+      "name": "Wall Cabinets (30 Inch Height)",
+      "prefix": "W",
+      "items": [
+        { "sku": "W0930", "width": 9, "height": 30, "depth": 12 },
+        { "sku": "W1230", "width": 12, "height": 30, "depth": 12 },
+        { "sku": "W1530", "width": 15, "height": 30, "depth": 12 },
+        { "sku": "W1830", "width": 18, "height": 30, "depth": 12 },
+        { "sku": "W2130", "width": 21, "height": 30, "depth": 12 },
+        { "sku": "W2430", "width": 24, "height": 30, "depth": 12 },
+        { "sku": "W2730", "width": 27, "height": 30, "depth": 12 },
+        { "sku": "W3030", "width": 30, "height": 30, "depth": 12 },
+        { "sku": "W3330", "width": 33, "height": 30, "depth": 12 },
+        { "sku": "W3630", "width": 36, "height": 30, "depth": 12 },
+        { "sku": "WDC2430", "width": 24, "height": 30, "type": "Corner", "description": "Diagonal Corner Wall" }
+      ]
+    },
+    {
+      "name": "Wall Cabinets (36 Inch Height)",
+      "prefix": "W",
+      "items": [
+        { "sku": "W0936", "width": 9, "height": 36, "depth": 12 },
+        { "sku": "W1236", "width": 12, "height": 36, "depth": 12 },
+        { "sku": "W1536", "width": 15, "height": 36, "depth": 12 },
+        { "sku": "W1836", "width": 18, "height": 36, "depth": 12 },
+        { "sku": "W2136", "width": 21, "height": 36, "depth": 12 },
+        { "sku": "W2436", "width": 24, "height": 36, "depth": 12 },
+        { "sku": "W2736", "width": 27, "height": 36, "depth": 12 },
+        { "sku": "W3036", "width": 30, "height": 36, "depth": 12 },
+        { "sku": "W3336", "width": 33, "height": 36, "depth": 12 },
+        { "sku": "W3636", "width": 36, "height": 36, "depth": 12 },
+        { "sku": "WDC2436", "width": 24, "height": 36, "type": "Corner", "description": "Diagonal Corner Wall" }
+      ]
+    },
+    {
+      "name": "Wall Cabinets (42 Inch Height)",
+      "prefix": "W",
+      "items": [
+        { "sku": "W0942", "width": 9, "height": 42, "depth": 12 },
+        { "sku": "W1242", "width": 12, "height": 42, "depth": 12 },
+        { "sku": "W1542", "width": 15, "height": 42, "depth": 12 },
+        { "sku": "W1842", "width": 18, "height": 42, "depth": 12 },
+        { "sku": "W2142", "width": 21, "height": 42, "depth": 12 },
+        { "sku": "W2442", "width": 24, "height": 42, "depth": 12 },
+        { "sku": "W2742", "width": 27, "height": 42, "depth": 12 },
+        { "sku": "W3042", "width": 30, "height": 42, "depth": 12 },
+        { "sku": "W3342", "width": 33, "height": 42, "depth": 12 },
+        { "sku": "W3642", "width": 36, "height": 42, "depth": 12 },
+        { "sku": "WDC2442", "width": 24, "height": 42, "type": "Corner", "description": "Diagonal Corner Wall" }
+      ]
+    },
+    {
+      "name": "Wall Bridge Cabinets (Short Over-Appliance)",
+      "prefix": "W",
+      "items": [
+        { "sku": "W3012", "width": 30, "height": 12, "depth": 12 },
+        { "sku": "W3015", "width": 30, "height": 15, "depth": 12 },
+        { "sku": "W3018", "width": 30, "height": 18, "depth": 12 },
+        { "sku": "W3024", "width": 30, "height": 24, "depth": 12 },
+        { "sku": "W3612", "width": 36, "height": 12, "depth": 12, "description": "Standard Refrigerator Bridge" },
+        { "sku": "W3615", "width": 36, "height": 15, "depth": 12 },
+        { "sku": "W3618", "width": 36, "height": 18, "depth": 12, "description": "Deep Refrigerator Bridge Options alternate depth 24\"" },
+        { "sku": "W3624", "width": 36, "height": 24, "depth": 12 }
+      ]
+    },
+    {
+      "name": "Tall Pantry & Oven Cabinets",
+      "prefix": "P / OC",
+      "items": [
+        { "sku": "P1884", "width": 18, "height": 84, "depth": 24, "description": "Pantry utility cabinet" },
+        { "sku": "P1890", "width": 18, "height": 90, "depth": 24, "description": "Pantry utility cabinet" },
+        { "sku": "P1896", "width": 18, "height": 96, "depth": 24, "description": "Pantry utility cabinet" },
+        { "sku": "P2484", "width": 24, "height": 84, "depth": 24, "description": "Double door pantry" },
+        { "sku": "P2490", "width": 24, "height": 90, "depth": 24, "description": "Double door pantry" },
+        { "sku": "P2496", "width": 24, "height": 96, "depth": 24, "description": "Double door pantry" },
+        { "sku": "P3084", "width": 30, "height": 84, "depth": 24, "description": "Wide double door pantry" },
+        { "sku": "P3090", "width": 30, "height": 90, "depth": 24, "description": "Wide double door pantry" },
+        { "sku": "P3096", "width": 30, "height": 96, "depth": 24, "description": "Wide double door pantry" },
+        { "sku": "OC31-90SM", "width": 31.5, "height": 90, "type": "Oven Cabinet", "description": "Single oven + microwave combo" }
+      ]
+    },
+    {
+      "name": "Vanity Cabinets",
+      "prefix": "V",
+      "items": [
+        { "sku": "VSB24", "width": 24, "height": 34.5, "depth": 21, "type": "Sink Base" },
+        { "sku": "VSB27", "width": 27, "height": 34.5, "depth": 21, "type": "Sink Base" },
+        { "sku": "VSB30", "width": 30, "height": 34.5, "depth": 21, "type": "Sink Base" },
+        { "sku": "VSB36", "width": 36, "height": 34.5, "depth": 21, "type": "Sink Base" },
+        { "sku": "VSD30L", "width": 30, "height": 34.5, "depth": 21, "type": "Drawer Bank Left" },
+        { "sku": "VSD30R", "width": 30, "height": 34.5, "depth": 21, "type": "Drawer Bank Right" },
+        { "sku": "VSD36L", "width": 36, "height": 34.5, "depth": 21, "type": "Drawer Bank Left" },
+        { "sku": "VSD36R", "width": 36, "height": 34.5, "depth": 21, "type": "Drawer Bank Right" },
+        { "sku": "VSD48", "width": 48, "height": 34.5, "depth": 21, "description": "Single sink center, drawers both sides" },
+        { "sku": "VSD60-6D", "width": 60, "height": 34.5, "depth": 21, "type": "Double Vanity", "description": "Double sink base with center drawer bank" }
+      ]
+    },
+    {
+      "name": "Accessories, Fillers & Trim",
+      "prefix": "AC",
+      "items": [
+        { "sku": "AC-TK", "name": "Toe Kick", "dimensions": "96\" x 4.5\" x 1/4\"", "description": "Base trim" },
+        { "sku": "AC-CM 4 1/2", "name": "Crown Molding 4 1/2", "length": "96\"", "description": "Decorative top molding" },
+        { "sku": "AC-CM 2 1/2", "name": "Crown Molding 2 1/2", "length": "96\"", "description": "Decorative top molding" },
+        { "sku": "AC-WF-F3 96", "name": "Base Filler", "dimensions": "3\" x 96\"", "description": "Universal tall/base panel filler" },
+        { "sku": "AC-F696", "name": "Base Filler", "dimensions": "6\" x 96\"", "description": "Universal wide filler" },
+        { "sku": "AC-WF330", "name": "Wall Filler", "dimensions": "3\" x 30\"", "description": "30 inch wall run filler" },
+        { "sku": "AC-WF336", "name": "Wall Filler", "dimensions": "3\" x 36\"", "description": "36 inch wall run filler" },
+        { "sku": "AC-WF342", "name": "Wall Filler", "dimensions": "3\" x 42\"", "description": "42 inch wall run filler" },
+        { "sku": "ROT15", "name": "Roll Out Tray", "width": 15,("sku"): ("AC-TK"), ("name"): ("Toe Kick"), ("dimensions"): ("96\" x 4.5\" x 1/4\""), ("description"): ("Base trim")},
+        { "sku": "ROT18", "name": "Roll Out Tray", "width": 18, "description": "Internal sliding drawer for 18 inch base" },
+        { "sku": "ROT24", "name": "Roll Out Tray", "width": 24, "description": "Internal sliding drawer for 24 inch base" },
+        { "sku": "BP2434.5", "name": "Base Skin Panel", "dimensions": "24\" x 34.5\"", "description": "Finished decorative island or base side panel" },
+        { "sku": "WR3015", "name": "Wine Rack", "width": 30, "height": 15, "description": "Horizontal bottle storage lattice" }
+      ]
+    }
+  ],
+  "sku_suffixes": {
+    "G": "Glass Door Profile Insert",
+    "L": "Left Hinge Assembly Configuration",
+    "R": "Right Hinge Assembly Configuration",
+    "-2": "Modified 2-Drawer variation configuration",
+    "SM": "Single oven + Microwave profile face panel cutting"
+  }
+}

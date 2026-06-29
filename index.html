@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px;
+  }
+
+  .workstation {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    max-width: 1120px;
+    padding: 32px;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .scan-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: background 0.2s;
+  }
+  .scan-section.dragover {
+    background: #eff6ff;
+    border-color: #0066cc;
+  }
+  
+  .scan-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 16px;
+  }
+
+  .scan-empty-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+    gap: 14px;
+  }
+  
+  .drop-zone {
+    width: 106px;
+    height: 98px;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    position: relative;
+  }
+  .drop-zone:hover { border-color: #0066cc; }
+  
+  .upload-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  .scan-active-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .thumbnail-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 4px 0;
+    width: 100%;
+  }
+  
+  .thumb-card {
+    position: relative;
+    width: 106px;
+    height: 98px;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .thumb-card:hover {
+    transform: translateY(-2px);
+    border-color: #0066cc;
+  }
+  
+  .thumb-image-wrapper {
+    position: relative;
+    display: inline-flex;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .thumb-render {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  .thumb-remove-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ef4444;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    z-index: 25;
+  }
+
+  .thumb-count-pill {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0066cc;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 102, 204, 0.25);
+    border: 1px solid #fff;
+    z-index: 20;
+  }
+
+  .mini-overlay-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .mini-box {
+    position: absolute;
+    border: 1px solid #0066cc;
+    background: rgba(0, 102, 204, 0.08);
+    border-radius: 1px;
+  }
+
+  .scan-btn {
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 28px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-start;
+    display: inline-block;
+    width: auto;
+    height: 38px;
+    transition: background 0.15s ease;
+  }
+  .scan-btn:hover { background: #0052a3; }
+  .scan-btn:disabled { background: #94a3b8; cursor: not-allowed; }
+
+  .controls-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+  }
+  .add-btn {
+    background: #1e293b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 36px;
+    transition: background 0.15s;
+  }
+  .add-btn:hover { background: #0f172a; }
+
+  .push-btn {
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 36px;
+    margin-left: auto;
+    transition: background 0.15s;
+  }
+  .push-btn:hover { background: #0052a3; }
+
+  .default-color-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .default-color-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #475569;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    width: 280px;
+    height: 36px;
+    display: inline-block;
+  }
+
+  .catalog-search-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    left: auto;
+    width: 520px;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    z-index: 999999;
+    display: none;
+    flex-direction: column;
+    max-height: 340px;
+    overflow-y: auto;
+    padding: 6px 0;
+  }
+  
+  .lookup-panel-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    gap: 12px;
+    transition: background 0.1s;
+  }
+  .lookup-panel-row:last-child { border-bottom: none; }
+  .lookup-panel-row:hover { background: #f8fafc; }
+
+  .lookup-commit-btn {
+    background: #64748b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .lookup-commit-btn:hover { background: #475569; }
+
+  .table-header {
+    display: grid;
+    grid-template-columns: 130px 16px 180px 80px 1fr 44px;
+    gap: 12px;
+    background: #f1f5f9;
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin-bottom: 4px;
+    align-items: center;
+  }
+  .table-header span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .item-row {
+    display: grid;
+    grid-template-columns: 130px 16px 180px 80px 1fr 44px;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
+  }
+  .row-hyphen-divider {
+    text-align: center;
+    color: #cbd5e1;
+    font-weight: 600;
+  }
+
+  .color-select-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    height: 36px;
+    padding: 0 10px;
+    gap: 8px;
+    cursor: pointer;
+    width: 100%;
+    user-select: none;
+  }
+  .color-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .color-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    flex: 1;
+  }
+  .chevron {
+    color: #94a3b8;
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+
+  .color-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    min-width: 140px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cbd5e1;
+    z-index: 99999;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    padding: 4px 0;
+  }
+  .color-dropdown.open { display: flex; }
+  .color-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: background-color 0.12s ease;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+  }
+  .color-option:hover { background-color: #f1f5f9; }
+  .color-option.selected { background-color: #eff6ff; color: #0066cc; }
+  .opt-swatch { width: 18px; height: 18px; border-radius: 4px; flex-shrink: 0; }
+
+  .sku-input {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 0 12px;
+    height: 36px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    width: 100%;
+    outline: none;
+  }
+  
+  .qty-input {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    height: 36px;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0f172a;
+    outline: none;
+    background: #fff;
+  }
+
+  .details-text {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .delete-btn {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .delete-btn:hover { background: #fee2e2; border-color: #fca5a5; }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal-window {
+    background: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1100px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow: hidden;
+  }
+
+  .modal-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-title { font-size: 15px; font-weight: 700; color: #0f172a; }
+  .modal-close-btn {
+    background: none; border: none; font-size: 24px; color: #64748b; cursor: pointer;
+  }
+
+  .modal-body {
+    padding: 24px;
+    overflow: auto;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blueprint-canvas-wrapper {
+    position: relative;
+    display: inline-flex;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  }
+  
+  .blueprint-large-image {
+    max-width: 100%;
+    max-height: 70vh;
+    display: block;
+    height: auto;
+  }
+
+  .modal-overlay-canvas {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .spatial-bounding-box {
+    position: absolute;
+    border: 2px solid #0066cc;
+    background: rgba(0, 102, 204, 0.12) !important;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .spatial-box-label {
+    color: #0066cc;
+    font-weight: 700;
+    font-size: 11px;
+    background: #fff;
+    border: 1px solid #0066cc;
+    padding: 1px 4px;
+    border-radius: 3px;
+    position: absolute;
+    top: 35%;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+</style>
+</head>
+<body>
+
+<div class="workstation">
+  <h1>Cabinet AI Production Workstation</h1>
+
+  <div class="scan-section" id="dropZoneContainer">
+    
+    <div id="emptyScanState" class="scan-empty-layout">
+      <div class="scan-title" style="align-self: flex-start; margin-bottom: 4px;">Files Scan</div>
+      <label class="drop-zone">
+        <input type="file" id="fileInputSource" multiple accept=".pdf,image/*" style="display:none;" onchange="catchFileSelection(event)">
+        <svg width="24" height="24" fill="none" stroke="#94a3b8" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M3 7c0-1.1.9-2 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+          <line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/>
+        </svg>
+      </label>
+      <div class="upload-text">Upload floor plan, sales list, image, pdf</div>
+    </div>
+
+    <div id="activeScanState" class="scan-active-layout" style="display: none;">
+      <div class="scan-title">Scan Files (Floorplan, sales list, image, pdf)</div>
+      <div class="thumbnail-grid" id="loadedThumbnailsContainer"></div>
+      <button class="scan-btn" id="scanBtn" onclick="handleScan()">Scan</button>
+    </div>
+
+  </div>
+
+  <div class="controls-row">
+    <button class="add-btn" onclick="addRow()">+ Add Manual Item Line</button>
+    
+    <div class="search-input-wrapper">
+      <input type="text" 
+             id="skuSearchInput" 
+             class="sku-input" 
+             placeholder="Input SKU code to add item" 
+             autocomplete="off" 
+             oninput="handleCatalogSearch(this.value)"
+             onfocus="handleCatalogSearch(this.value)">
+      <div id="catalogDropdownPanel" class="catalog-search-popover"></div>
+    </div>
+
+    <div class="default-color-group">
+      <label>Default Color</label>
+      <div id="defaultColorPicker" style="width: 100px;"></div>
+    </div>
+
+    <button class="push-btn" onclick="pushToFishbowl()">Push Worksheet to Fishbowl</button>
+  </div>
+
+  <div class="table-header">
+    <span>Color Code</span>
+    <span></span>
+    <span>SKU Code</span>
+    <span>Quantity</span>
+    <span>Details</span>
+    <span></span>
+  </div>
+
+  <div id="itemRows"></div>
+</div>
+
+<div class="modal-overlay" id="spatialAnalysisModal" onclick="closeAnalysisModal()">
+  <div class="modal-window" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="modalFileTitle">Blueprint Computer Vision Analysis Overlay</div>
+      <button class="modal-close-btn" onclick="closeAnalysisModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="blueprint-canvas-wrapper">
+        <img src="" id="modalLargeImageRender" class="blueprint-large-image" alt="Large Vector Blueprint Context">
+        <div id="modalSpatialOverlayCanvas" class="modal-overlay-canvas"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const COLORS = [
+    { code: 'DW', label: 'DW', hex: '#ffffff', border: true },
+    { code: 'SC', label: 'SC', hex: '#fff8e5', border: true },
+    { code: 'GS', label: 'GS', hex: '#979aa7' },
+    { code: 'BS', label: 'BS', hex: '#1553a3' },
+    { code: 'SMS', label: 'SMS', hex: '#b08668' },
+    { code: 'SJ', label: 'SJ', hex: '#27282a' },
+  ];
+
+  let rows = [];
+  let nextId = 1;
+  let defaultColor = 'DW';
+  let filesQueue = [];
+  const validCatalogSkus = new Set(); 
+
+  // Core fallback catalog so the workstation works flawlessly out-of-the-box offline
+  let masterCatalog = {
+    "products": [
+      { "sku": "B09", "description": "Base Cabinet 9\" Width" },
+      { "sku": "B12", "description": "Base Cabinet 12\" Width" },
+      { "sku": "B15", "description": "Base Cabinet 15\" Width" },
+      { "sku": "B18", "description": "Base Cabinet 18\" Width" },
+      { "sku": "B21", "description": "Base Cabinet 21\" Width" },
+      { "sku": "B24", "description": "Base Cabinet 24\" Width" },
+      { "sku": "SB30", "description": "Sink Base Cabinet 30\"" },
+      { "sku": "SB36", "description": "Sink Base Cabinet 36\"" }
+    ]
+  };
+
+  const PDF_THUMBNAIL_MOCK = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="68" height="64" viewBox="0 0 68 64"><rect width="68" height="64" fill="%23fff" stroke="%23cbd5e1" stroke-width="1" rx="6"/><line x1="12" y1="16" x2="56" y2="16" stroke="%2394a3b8" stroke-width="1.2"/><line x1="12" y1="48" x2="56" y2="48" stroke="%2394a3b8" stroke-width="1.2"/><rect x="18" y="22" width="32" height="20" rx="2" fill="none" stroke="%23cbd5e1" stroke-width="1"/><line x1="34" y1="22" x2="34" y2="42" stroke="%23f1f5f9"/></svg>`;
+
+  function extractSkusRecursively(node) {
+    if (!node || typeof node !== 'object') return;
+    if (node.sku && typeof node.sku === 'string') {
+      const cleanKey = node.sku.toUpperCase().replace(/[\s\-\/\*]/g, '');
+      validCatalogSkus.add(cleanKey);
+    }
+    for (let key in node) {
+      if (node.hasOwnProperty(key)) extractSkusRecursively(node[key]);
+    }
+  }
+
+  function rebuildDatalistOptions() {
+    let existingDatalist = document.getElementById('inlineCatalogSuggestions');
+    if (existingDatalist) existingDatalist.remove();
+
+    const datalistElement = document.createElement('datalist');
+    datalistElement.id = 'inlineCatalogSuggestions';
+    
+    const appendOptions = (obj) => {
+      if (!obj || typeof obj !== 'object') return;
+      if (obj.sku) {
+        const option = document.createElement('option');
+        option.value = obj.sku;
+        option.textContent = obj.description || obj.name || '';
+        datalistElement.appendChild(option);
+      }
+      for (let k in obj) { if (obj.hasOwnProperty(k)) appendOptions(obj[k]); }
+    };
+    appendOptions(masterCatalog);
+    document.body.appendChild(datalistElement);
+  }
+
+  async function initCatalogEngine() {
+    // Process local baseline entries first
+    extractSkusRecursively(masterCatalog);
+    rebuildDatalistOptions();
+
+    // Hot-swap from live server if file is available
+    try {
+      const res = await fetch('./catalog.json?t=' + Date.now());
+      if (res.ok) {
+        const fetchedData = await res.json();
+        if (fetchedData) {
+          masterCatalog = fetchedData;
+          validCatalogSkus.clear();
+          extractSkusRecursively(masterCatalog);
+          rebuildDatalistOptions();
+        }
+      }
+    } catch (err) {
+      console.log("Using baseline integrated workstation catalog registry mapping.");
+    }
+  }
+  window.addEventListener('DOMContentLoaded', initCatalogEngine);
+
+  function catchFileSelection(event) {
+    if (event.target.files) {
+      addFilesToQueue(event.target.files);
+      event.target.value = '';
+    }
+  }
+
+  function addFilesToQueue(filesList) {
+    for (let file of filesList) {
+      const uniqueFileId = 'file_' + Math.random().toString(36).substr(2, 9);
+      filesQueue.push({
+        id: uniqueFileId,
+        file: file,
+        scanned: false,
+        objectUrl: file.type.startsWith('image/') ? URL.createObjectURL(file) : PDF_THUMBNAIL_MOCK
+      });
+    }
+    syncScanningInterfaceState();
+  }
+
+  function removeFileFromQueue(fileId, event) {
+    if(event) { event.preventDefault(); event.stopPropagation(); }
+    filesQueue = filesQueue.filter(f => f.id !== fileId);
+    rows = rows.filter(r => r.fileId !== fileId);
+    syncScanningInterfaceState();
+    renderRows();
+  }
+
+  function syncScanningInterfaceState() {
+    const emptyStateNode = document.getElementById('emptyScanState');
+    const activeStateNode = document.getElementById('activeScanState');
+    const gridContainer = document.getElementById('loadedThumbnailsContainer');
+
+    if (filesQueue.length > 0) {
+      emptyStateNode.style.display = 'none';
+      activeStateNode.style.display = 'flex';
+      gridContainer.innerHTML = '';
+
+      filesQueue.forEach((fileItem) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'thumb-card';
+        wrap.setAttribute('onclick', `openAnalysisModal('${fileItem.id}')`);
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'thumb-image-wrapper';
+
+        const imageNode = document.createElement('img');
+        imageNode.className = 'thumb-render';
+        imageNode.src = fileItem.objectUrl;
+
+        const closeBadge = document.createElement('button');
+        closeBadge.className = 'thumb-remove-badge';
+        closeBadge.innerHTML = '&times;';
+        closeBadge.onclick = (e) => removeFileFromQueue(fileItem.id, e);
+
+        wrapper.appendChild(imageNode);
+        wrap.appendChild(wrapper);
+        wrap.appendChild(closeBadge);
+
+        const fileCabinetCount = rows.filter(r => r.fileId === fileItem.id).reduce((sum, r) => sum + r.qty, 0);
+        
+        if (fileCabinetCount > 0) {
+          const pill = document.createElement('div');
+          pill.className = 'thumb-count-pill';
+          pill.textContent = `${fileCabinetCount} Units`;
+          wrap.appendChild(pill);
+
+          const miniCanvas = document.createElement('div');
+          miniCanvas.className = 'mini-overlay-canvas';
+
+          const contextualRows = rows.filter(r => r.fileId === fileItem.id);
+          contextualRows.forEach((row) => {
+            if (Array.isArray(row.boxes)) {
+              row.boxes.forEach(boxCoord => {
+                const miniBox = document.createElement('div');
+                miniBox.className = 'mini-box';
+                miniBox.style.top = boxCoord.top;
+                miniBox.style.left = boxCoord.left;
+                miniBox.style.width = boxCoord.width;
+                miniBox.style.height = boxCoord.height;
+                miniCanvas.appendChild(miniBox);
+              });
+            }
+          });
+          wrapper.appendChild(miniCanvas);
+        }
+
+        gridContainer.appendChild(wrap);
+      });
+
+      const addTrigger = document.createElement('label');
+      addTrigger.className = 'drop-zone';
+      addTrigger.style.width = '106px';
+      addTrigger.style.height = '98px';
+      addTrigger.innerHTML = `<input type="file" id="fileInputInline" multiple accept=".pdf,image/*" style="display:none;" onchange="catchFileSelection(event)">
+        <svg width="20" height="20" fill="none" stroke="#94a3b8" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M3 7c0-1.1.9-2 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+          <line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/>
+        </svg>`;
+      gridContainer.appendChild(addTrigger);
+
+    } else {
+      emptyStateNode.style.display = 'flex';
+      activeStateNode.style.display = 'none';
+      renderRows();
+    }
+  }
+
+  function openAnalysisModal(fileItemId) {
+    const targetFile = filesQueue.find(f => f.id === fileItemId);
+    if (!targetFile) return;
+
+    const modal = document.getElementById('spatialAnalysisModal');
+    const modalImage = document.getElementById('modalLargeImageRender');
+    const modalCanvas = document.getElementById('modalSpatialOverlayCanvas');
+    const modalTitle = document.getElementById('modalFileTitle');
+
+    modalTitle.textContent = `Blueprint Computer Vision Trace Overlays: ${targetFile.file.name}`;
+    modalImage.src = targetFile.objectUrl;
+    modalCanvas.innerHTML = ''; 
+
+    modal.classList.add('open');
+
+    const contextualRows = rows.filter(r => r.fileId === fileItemId);
+
+    contextualRows.forEach((row) => {
+      if (Array.isArray(row.boxes)) {
+        row.boxes.forEach(boxCoord => {
+          const box = document.createElement('div');
+          box.className = 'spatial-bounding-box';
+          box.style.top = boxCoord.top;
+          box.style.left = boxCoord.left;
+          box.style.width = boxCoord.width;
+          box.style.height = boxCoord.height;
+
+          const lbl = document.createElement('div');
+          lbl.className = 'spatial-box-label';
+          lbl.textContent = row.sku;
+
+          box.appendChild(lbl);
+          modalCanvas.appendChild(box);
+        });
+      }
+    });
+  }
+
+  function closeAnalysisModal() {
+    document.getElementById('spatialAnalysisModal').classList.remove('open');
+  }
+
+  function makeColorPicker(containerId, selectedCode, onChange) {
+    const container = document.getElementById(containerId) || containerId;
+    container.innerHTML = '';
+    container.style.position = 'relative';
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'color-select-wrapper';
+
+    const swatch = document.createElement('div');
+    swatch.className = 'color-swatch';
+    const chevron = document.createElement('span');
+    chevron.className = 'chevron';
+    chevron.textContent = '▼';
+    const label = document.createElement('span');
+    label.className = 'color-label';
+
+    function updateDisplay(code) {
+      const c = COLORS.find(x => x.code === code) || COLORS[0];
+      swatch.style.background = c.hex;
+      swatch.style.border = c.border ? '1px solid #dee2e5' : '1px solid transparent';
+      label.textContent = c.code;
+    }
+    updateDisplay(selectedCode);
+
+    wrapper.appendChild(swatch);
+    wrapper.appendChild(label);
+    wrapper.appendChild(chevron);
+
+    const dropdown = document.createElement('div');
+    dropdown.className = 'color-dropdown';
+
+    COLORS.forEach(c => {
+      const opt = document.createElement('div');
+      opt.className = 'color-option' + (c.code === selectedCode ? ' selected' : '');
+      
+      const optSwatch = document.createElement('div');
+      optSwatch.className = 'opt-swatch';
+      optSwatch.style.background = c.hex;
+      if (c.border) optSwatch.style.border = '1px solid #cbd5e1';
+      
+      const optText = document.createElement('span');
+      optText.textContent = c.label;
+
+      opt.appendChild(optSwatch);
+      opt.appendChild(optText);
+      
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.querySelectorAll('.color-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        updateDisplay(c.code);
+        dropdown.classList.remove('open');
+        onChange(c.code);
+      });
+      dropdown.appendChild(opt);
+    });
+
+    wrapper.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.color-dropdown').forEach(d => d.classList.remove('open'));
+      if (!wasOpen) dropdown.classList.add('open');
+    });
+
+    container.appendChild(wrapper);
+    container.appendChild(dropdown);
+  }
+
+  function renderDefaultColor() {
+    makeColorPicker('defaultColorPicker', defaultColor, (code) => { defaultColor = code; });
+  }
+
+  function renderRows() {
+    const container = document.getElementById('itemRows');
+    container.innerHTML = '';
+
+    rows.forEach(row => {
+      const div = document.createElement('div');
+      div.className = 'item-row';
+      div.id = 'row-' + row.id;
+
+      const cleanedInputSku = row.sku.toUpperCase().replace(/[\s\-\/\*]/g, '');
+      const isFilled = cleanedInputSku.length > 0;
+      
+      const isMismatch = isFilled && masterCatalog && !validCatalogSkus.has(cleanedInputSku);
+      if (isMismatch) div.style.backgroundColor = '#FAE9EA';
+
+      const colorCell = document.createElement('div');
+      colorCell.id = 'color-' + row.id;
+      div.appendChild(colorCell);
+
+      const separatorNode = document.createElement('div');
+      separatorNode.className = 'row-hyphen-divider';
+      separatorNode.textContent = '-';
+      div.appendChild(separatorNode);
+
+      const skuInput = document.createElement('input');
+      skuInput.type = 'text';
+      skuInput.className = 'sku-input';
+      skuInput.setAttribute('list', 'inlineCatalogSuggestions'); 
+      skuInput.value = row.sku;
+      
+      skuInput.addEventListener('input', e => { row.sku = e.target.value.toUpperCase().trim(); });
+
+      skuInput.addEventListener('change', e => {
+        const committedSku = row.sku;
+        const cleanCommitted = committedSku.toUpperCase().replace(/[\s\-\/\*]/g, '');
+
+        let discoveredDetails = '';
+        if (masterCatalog) {
+          const checkDetails = (obj) => {
+            if (!obj || typeof obj !== 'object') return;
+            if (obj.sku && obj.sku.toUpperCase().replace(/[\s\-\/\*]/g, '') === cleanCommitted) {
+              discoveredDetails = obj.description || obj.name || '';
+              row.sku = obj.sku; 
+              skuInput.value = obj.sku;
+              return;
+            }
+            for (let k in obj) { if (obj.hasOwnProperty(k)) checkDetails(obj[k]); }
+          };
+          checkDetails(masterCatalog);
+        }
+
+        const isAiRow = row.fileId !== 'manual';
+        const isLookupMismatch = committedSku.length > 0 && masterCatalog && !validCatalogSkus.has(cleanCommitted);
+
+        if (committedSku.length > 0) {
+          if (isLookupMismatch) {
+            div.style.backgroundColor = '#FAE9EA';
+            row.details = '⚠️ SYSTEM CATALOG MISMATCH: SKU not located inside Fishbowl product ledger';
+            details.textContent = row.details;
+            details.style.color = '#c5221f';
+            details.style.fontWeight = '600';
+          } else {
+            div.style.backgroundColor = '';
+            row.details = discoveredDetails || row.details || 'Manual data trace catalog injection';
+            details.textContent = row.details;
+
+            const isLogicMatch = isAiRow && (
+              row.details.includes('Translated') || row.details.includes('Retained') || 
+              row.details.includes('Parsed') || row.details.includes('Mapped') || 
+              row.details.includes('Assumed') || row.details.includes('Matched') ||
+              row.details.includes('Interpreted') || row.details.includes('processed')
+            );
+
+            if (isLogicMatch) {
+              details.style.color = '#c5221f'; details.style.fontWeight = '600';
+            } else {
+              details.style.color = '#64748b'; details.style.fontWeight = '400';
+            }
+          }
+        } else {
+          div.style.backgroundColor = '';
+          row.details = 'Manual Entry Item Line';
+          details.textContent = row.details;
+          details.style.color = '#64748b'; details.style.fontWeight = '400';
+        }
+        
+        syncScanningInterfaceState();
+      });
+      div.appendChild(skuInput);
+
+      const qtyInp = document.createElement('input');
+      qtyInp.type = 'number';
+      qtyInp.className = 'qty-input';
+      qtyInp.value = row.qty;
+      qtyInp.min = 0;
+      qtyInp.addEventListener('input', e => { 
+        row.qty = parseInt(e.target.value) || 0; 
+        syncScanningInterfaceState();
+      });
+      div.appendChild(qtyInp);
+
+      const details = document.createElement('span');
+      details.className = 'details-text';
+      details.textContent = row.details || 'Manual Entry Item Line';
+      details.title = row.details || '';
+      
+      const isAiRow = row.fileId !== 'manual';
+      const isLogicMatch = isAiRow && (
+        details.textContent.includes('Translated') || details.textContent.includes('Retained') || 
+        details.textContent.includes('Parsed') || details.textContent.includes('Mapped') || 
+        details.textContent.includes('Assumed') || details.textContent.includes('Matched') ||
+        details.textContent.includes('Interpreted') || details.textContent.includes('processed')
+      );
+
+      if (isMismatch || isLogicMatch) {
+        details.style.color = '#c5221f'; details.style.fontWeight = '600';
+      } else {
+        details.style.color = '#64748b'; details.style.fontWeight = '400';
+      }
+      div.appendChild(details);
+
+      const delBtn = document.createElement('button');
+      delBtn.className = 'delete-btn';
+      delBtn.innerHTML = `<svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+      delBtn.addEventListener('click', () => {
+        rows = rows.filter(r => r.id !== row.id);
+        renderRows();
+        syncScanningInterfaceState();
+      });
+      div.appendChild(delBtn);
+
+      container.appendChild(div);
+      makeColorPicker(colorCell, row.color, (code) => { 
+        row.color = code; 
+        syncScanningInterfaceState();
+      });
+    });
+  }
+
+  function addRow() {
+    rows.push({ id: nextId++, color: defaultColor, sku: '', qty: 1, details: 'Manual Data Record Entry Row', fileId: 'manual' });
+    renderRows();
+    setTimeout(() => {
+      const inputs = document.querySelectorAll('.sku-input');
+      if (inputs.length) inputs[inputs.length - 1].focus();
+    }, 50);
+  }
+
+  function handleCatalogSearch(query) {
+    const val = query.toUpperCase().trim();
+    const dropdown = document.getElementById('catalogDropdownPanel');
+    if (!val || !masterCatalog) { dropdown.style.display = 'none'; return; }
+
+    let searchMatches = [];
+    const scanItems = (obj) => {
+      if (!obj || typeof obj !== 'object') return;
+      if (obj.sku && obj.sku.toUpperCase().includes(val)) searchMatches.push(obj);
+      for (let key in obj) { if (obj.hasOwnProperty(key)) scanItems(obj[key]); }
+    };
+    scanItems(masterCatalog);
+    displayLookupResults(searchMatches.slice(0, 5));
+  }
+
+  function displayLookupResults(matches) {
+    const dropdown = document.getElementById('catalogDropdownPanel');
+    if (matches.length === 0) {
+      dropdown.innerHTML = '<div style="padding:12px; font-size:13px; color:#64748b;">No matching formulas located.</div>';
+      dropdown.style.display = 'flex'; return;
+    }
+    dropdown.innerHTML = matches.map(item => {
+      const cleanInputSku = item.sku.toUpperCase().replace(/[\s\-\/\*]/g, '');
+      const existingManualRow = rows.find(r => r.fileId === 'manual' && r.color === defaultColor && r.sku.toUpperCase().replace(/[\s\-\/\*]/g, '') === cleanInputSku);
+      const currentQty = existingManualRow ? existingManualRow.qty : 1;
+
+      return `
+        <div class="lookup-panel-row">
+          <select class="lookup-row-color" style="padding:6px; border:1px solid #cbd5e1; border-radius:4px; font-weight:700;" onclick="event.stopPropagation()">
+            ${COLORS.map(c => `<option value="${c.code}" ${c.code === defaultColor ? 'selected' : ''}>${c.label}</option>`).join('')}
+          </select>
+          <div style="font-size:13px; font-weight:700; color:#0f172a; flex:1;" class="lookup-row-sku">${item.sku}</div>
+          <input type="number" class="lookup-row-qty" value="${currentQty}" min="1" style="width:54px; text-align:center; padding:5px; border:1px solid #cbd5e1; border-radius:4px; font-weight:700;" onclick="event.stopPropagation()">
+          <button class="lookup-commit-btn" onclick="commitLookupSelection(this, event)">+ Add Item</button>
+        </div>
+      `;
+    }).join('');
+    dropdown.style.display = 'flex';
+  }
+
+  function commitLookupSelection(buttonEl, event) {
+    event.preventDefault(); 
+    event.stopPropagation(); // Explicit interceptor blocks immediate catalog layout closure
+    
+    const parentRow = buttonEl.closest('.lookup-panel-row');
+    const color = parentRow.querySelector('.lookup-row-color').value;
+    const sku = parentRow.querySelector('.lookup-row-sku').innerText;
+    const qty = parseInt(parentRow.querySelector('.lookup-row-qty').value) || 1;
+
+    let description = 'Manual data trace catalog injection';
+    if (masterCatalog) {
+      const getDesc = (obj) => {
+        if (!obj || typeof obj !== 'object') return;
+        if (obj.sku && obj.sku.toUpperCase().replace(/[\s\-\/\*]/g, '') === sku.toUpperCase().replace(/[\s\-\/\*]/g, '')) {
+          description = obj.description || obj.name || description; return;
+        }
+        for (let k in obj) { if (obj.hasOwnProperty(k)) getDesc(obj[k]); }
+      };
+      getDesc(masterCatalog);
+    }
+
+    const cleanInputSku = sku.toUpperCase().replace(/[\s\-\/\*]/g, '');
+    const existingManualRow = rows.find(r => r.fileId === 'manual' && r.color === color && r.sku.toUpperCase().replace(/[\s\-\/\*]/g, '') === cleanInputSku);
+
+    // Cumulative addition strategy ensures back-to-back selections stack inside database
+    if (existingManualRow) {
+      existingManualRow.qty += qty;
+    } else {
+      rows.push({ id: nextId++, color: color, sku: sku.toUpperCase().trim(), qty: qty, details: description, fileId: 'manual' });
+    }
+    
+    const originalText = buttonEl.innerText;
+    buttonEl.innerText = "Added ✓";
+    buttonEl.style.backgroundColor = "#10b981";
+    setTimeout(() => {
+      buttonEl.innerText = originalText;
+      buttonEl.style.backgroundColor = "";
+    }, 1000);
+
+    renderRows();
+    syncScanningInterfaceState();
+
+    // FIXED: Enforce clear structural layout survival so the list stays open for multiple items
+    document.getElementById('catalogDropdownPanel').style.display = 'flex';
+    document.getElementById('skuSearchInput').focus();
+  }
+
+  async function pushToFishbowl() {
+    const pushBtn = document.querySelector('.push-btn');
+    if (!rows.length) return alert("Worksheet is currently empty.");
+    
+    pushBtn.innerText = "Pushing...";
+    pushBtn.disabled = true;
+
+    try {
+      const res = await fetch('/push', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: rows })
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert(data.message);
+      } else {
+        alert("Push failed: " + data.error);
+      }
+    } catch (err) {
+      alert("System connection failure: " + err.message);
+    } finally {
+      pushBtn.innerText = "Push Worksheet to Fishbowl";
+      pushBtn.disabled = false;
+    }
+  }
+
+  const dropZoneContainer = document.getElementById('dropZoneContainer');
+  ['dragenter', 'dragover'].forEach(eName => {
+    dropZoneContainer.addEventListener(eName, e => { e.preventDefault(); e.stopPropagation(); dropZoneContainer.classList.add('dragover'); }, false);
+  });
+  ['dragleave', 'drop'].forEach(eName => {
+    dropZoneContainer.addEventListener(eName, e => { e.preventDefault(); e.stopPropagation(); dropZoneContainer.classList.remove('dragover'); }, false);
+  });
+  dropZoneContainer.addEventListener('drop', e => { if(e.dataTransfer.files.length) addFilesToQueue(e.dataTransfer.files); }, false);
+
+  async function handleScan() {
+    const targetUnscannedFiles = filesQueue.filter(f => !f.scanned);
+    if (!targetUnscannedFiles.length) return;
+
+    const scanBtn = document.getElementById('scanBtn');
+    scanBtn.innerText = "Scanning..."; scanBtn.disabled = true;
+
+    for (let fileItem of targetUnscannedFiles) {
+      const formData = new FormData();
+      formData.append('image', fileItem.file);
+      formData.append('prefix', defaultColor);
+
+      try {
+        const response = await fetch('/analyze', { method: 'POST', body: formData });
+        const data = await response.json();
+        
+        if (data.cabinets) {
+          const standardPrefixes = ['DW', 'SC', 'GS', 'BS', 'SMS', 'SJ'];
+          data.cabinets.forEach(item => {
+            const rawSku = item.code || '';
+            let matchedColor = defaultColor;
+            let strippedCode = rawSku;
+
+            for (let p of standardPrefixes) {
+              if (rawSku.toUpperCase().startsWith(p + '-')) {
+                matchedColor = p; strippedCode = rawSku.substring(p.length + 1); break;
+              }
+            }
+
+            let mappedDesc = 'Extracted via structural computer vision scan parameters';
+            let canonicalSku = strippedCode.toUpperCase().trim();
+            const lookupValue = strippedCode.toUpperCase().replace(/[\s\-\/\*]/g, '');
+            
+            if (masterCatalog) {
+              const fetchItemDesc = (obj) => {
+                if (!obj || typeof obj !== 'object') return;
+                if (obj.sku && obj.sku.toUpperCase().replace(/[\s\-\/\*]/g, '') === lookupValue) {
+                  mappedDesc = obj.description || obj.name || mappedDesc; 
+                  canonicalSku = obj.sku; 
+                  return;
+                }
+                for (let k in obj) { if (obj.hasOwnProperty(k)) fetchItemDesc(obj[k]); }
+              };
+              fetchItemDesc(masterCatalog);
+            }
+
+            const existingRow = rows.find(r => r.fileId === fileItem.id && r.color === matchedColor && r.sku.toUpperCase().replace(/[\s\-\/\*]/g, '') === canonicalSku.toUpperCase().replace(/[\s\-\/\*]/g, ''));
+            
+            if (existingRow) {
+              existingRow.qty += item.qty || 1;
+              if (Array.isArray(item.boxes)) {
+                if (!Array.isArray(existingRow.boxes)) existingRow.boxes = [];
+                existingRow.boxes.push(...item.boxes);
+              }
+            } else {
+              rows.push({ 
+                id: nextId++, 
+                color: matchedColor, 
+                sku: canonicalSku, 
+                qty: item.qty || 1, 
+                boxes: Array.isArray(item.boxes) ? item.boxes : [],
+                details: item.reasoning || mappedDesc, 
+                fileId: fileItem.id 
+              });
+            }
+          });
+          fileItem.scanned = true;
+        }
+      } catch (err) {
+        console.error("Scanning error occurred on item:", fileItem.file.name);
+      }
+    }
+    renderRows();
+    syncScanningInterfaceState();
+    scanBtn.innerText = "Scan"; scanBtn.disabled = false;
+  }
+
+  // CLOSE INTERCEPTOR FIXED: Closes panels accurately only when clicking clean outside our UI wrappers
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-input-wrapper')) {
+      document.getElementById('catalogDropdownPanel').style.display = 'none';
+    }
+    if (!e.target.closest('.color-select-wrapper') && !e.target.closest('.color-dropdown')) {
+      document.querySelectorAll('.color-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+
+  renderDefaultColor();
+  renderRows();
+</script>
+</body>
+</html>
