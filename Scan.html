@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <!-- PWA & Native Fullscreen App Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#3B82F6" />
+  <link rel="manifest" href="manifest.json" />
+
+  <title>RFID Warehouse App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #F8F9FA;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .card-blue {
+      background-color: #F0F7FF;
+      border: 2px solid #3B82F6;
+    }
+
+    .card-green {
+      background-color: #F0FDF4;
+      border: 2px solid #22C55E;
+    }
+
+    @keyframes rollText {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      40% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      41% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.99);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes errorShake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-4px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(4px);
+      }
+    }
+
+    @keyframes popBounce {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .animate-roll {
+      animation: rollText 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-slide-up {
+      animation: slideInUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.2s ease-out forwards;
+    }
+
+    .animate-shake {
+      animation: errorShake 0.35s ease-in-out;
+    }
+
+    .animate-pop {
+      animation: popBounce 0.25s ease-out;
+    }
+  </style>
+</head>
+
+<body class="text-gray-900 pb-24 select-none">
+
+  <!-- TOP NAV TABS & LIVE DIAGNOSTIC BAR -->
+  <div id="top-tabs" class="bg-white border-b border-gray-200 sticky top-0 z-20 shadow-sm">
+    <div class="flex w-full">
+      <button onclick="switchMainTab('packing')" id="tab-packing"
+        class="w-1/2 py-3 border-b-2 border-blue-600 text-blue-600 font-bold transition-all duration-200">Packing</button>
+      <button onclick="switchMainTab('receiving')" id="tab-receiving"
+        class="w-1/2 py-3 text-gray-400 font-semibold transition-all duration-200">Receiving</button>
+    </div>
+
+    <div class="px-4 py-1.5 bg-gray-900 text-white flex justify-between items-center text-[11px] font-mono">
+      <span id="focus-status" class="text-emerald-400 font-bold">● SCANNER READY</span>
+      <span id="last-read-tag" class="text-gray-300 truncate max-w-[180px]">Buffer: [Empty]</span>
+    </div>
+  </div>
+
+  <!-- HARDWARE INPUT LISTENER -->
+  <div class="px-5 pt-3">
+    <input type="text" id="rfid-listener" inputmode="none" autocomplete="off"
+      placeholder="Tap here if scanner loses focus..."
+      class="w-full py-1 px-3 bg-blue-50/60 border border-blue-200 rounded-lg text-xs font-mono text-blue-900 focus:bg-white focus:border-blue-500 focus:outline-none transition-all" />
+  </div>
+
+  <!-- WORKFLOW 1: PACKING -->
+  <div id="screen-packing-list" class="p-5 max-w-md mx-auto space-y-4 animate-fade-in">
+    <div class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-700 tracking-tight">Packing orders</h1>
+    </div>
+    <div id="orders-list"
+      class="divide-y divide-gray-200 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"></div>
+  </div>
+
+  <div id="screen-packing-detail" class="p-5 max-w-md mx-auto space-y-5 hidden animate-fade-in">
+    <div class="flex items-center gap-3">
+      <button id="detail-back-btn" onclick="handleDetailBack()"
+        class="p-1 -ml-1 text-gray-700 hover:bg-gray-100 rounded-lg active:scale-95 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="space-y-0.5">
+      <div id="header-order-container" class="flex items-center gap-2 transition-all duration-300 origin-left">
+        <span id="order-detail-id" class="text-3xl font-bold text-gray-800 transition-all duration-300">15764</span>
+        <span id="order-catalog-badge"
+          class="bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-semibold transition-all duration-200">Catalog</span>
+      </div>
+
+      <div id="header-sku-container"
+        class="overflow-hidden h-0 opacity-0 transition-all duration-300 transform translate-y-2">
+        <h1 id="sku-detail-id" class="text-2xl font-bold text-gray-800 tracking-tight">DW-P3093-A</h1>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+      <div id="card-blue" class="card-blue p-4 rounded-2xl text-center overflow-hidden transition-transform">
+        <div class="h-4 overflow-hidden relative">
+          <div id="blue-card-label" class="text-xs text-gray-500 font-medium">Item Total</div>
+        </div>
+        <div class="h-9 overflow-hidden relative mt-1">
+          <div id="blue-card-num" class="text-3xl font-extrabold text-blue-600">0</div>
+        </div>
+      </div>
+
+      <div id="card-green" class="card-green p-4 rounded-2xl text-center overflow-hidden transition-transform">
+        <div class="h-4 overflow-hidden relative">
+          <div id="green-card-label" class="text-xs text-gray-500 font-medium">SKU number</div>
+        </div>
+        <div class="h-9 overflow-hidden relative mt-1">
+          <div id="green-card-num" class="text-3xl font-extrabold text-emerald-600">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="detail-table-wrapper" class="animate-fade-in">
+      <div id="table-header-row"
+        class="flex justify-between text-xs font-semibold text-gray-500 px-1 pb-2 border-b border-gray-200">
+        <span id="col-head-1" class="w-7/12">SKU & Description</span>
+        <span id="col-head-2" class="w-2/12 text-center">Qty</span>
+        <span id="col-head-3" class="w-3/12 text-right">Count</span>
+      </div>
+
+      <div id="detail-table-rows" class="divide-y divide-gray-200 bg-white rounded-lg overflow-hidden"></div>
+    </div>
+  </div>
+
+  <!-- WORKFLOW 2: RECEIVING -->
+  <div id="view-receiving" class="p-5 max-w-md mx-auto space-y-4 hidden animate-fade-in">
+    <label class="block font-bold text-gray-800 text-sm">Search & Select SKU / Part:</label>
+
+    <div class="relative flex gap-2">
+      <div class="relative">
+        <button id="prefix-btn" onclick="togglePrefixDropdown()"
+          class="h-12 px-3 bg-gray-50 border-2 border-gray-200 rounded-xl flex items-center gap-2 font-bold text-gray-800 text-sm active:scale-95 transition">
+          <span id="prefix-swatch" class="w-4 h-4 rounded bg-gray-200 border border-gray-300"></span>
+          <span id="prefix-text">DW</span>
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div id="prefix-menu"
+          class="hidden absolute top-14 left-0 w-36 bg-white rounded-xl shadow-xl border border-gray-100 p-1.5 z-30 space-y-1">
+          <button onclick="selectPrefix('DW', '#E5E7EB')"
+            class="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-gray-800 hover:bg-gray-50 rounded-lg"><span
+              class="w-4 h-4 rounded bg-gray-200 border"></span> DW</button>
+          <button onclick="selectPrefix('SC', '#FEF08A')"
+            class="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-gray-800 hover:bg-gray-50 rounded-lg"><span
+              class="w-4 h-4 rounded bg-yellow-200 border"></span> SC</button>
+          <button onclick="selectPrefix('GS', '#9CA3AF')"
+            class="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-gray-800 hover:bg-gray-50 rounded-lg"><span
+              class="w-4 h-4 rounded bg-gray-400 border"></span> GS</button>
+          <button onclick="selectPrefix('BS', '#1D4ED8')"
+            class="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-gray-800 hover:bg-gray-50 rounded-lg"><span
+              class="w-4 h-4 rounded bg-blue-700"></span> BS</button>
+          <button onclick="selectPrefix('SMS', '#B45309')"
+            class="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-gray-800 hover:bg-gray-50 rounded-lg"><span
+              class="w-4 h-4 rounded bg-amber-700"></span> SMS</button>
+          <button onclick="selectPrefix('SJ', '#1F2937')"
+            class="w-full flex items-center gap-2 px-3 py-2 text-xs font-bold text-gray-800 hover:bg-gray-50 rounded-lg"><span
+              class="w-4 h-4 rounded bg-gray-800"></span> SJ</button>
+        </div>
+      </div>
+
+      <!-- SKU Input Field with Scanner Safeguard -->
+      <div class="flex-1 relative">
+        <input type="text" id="part-input" list="catalog-skus" placeholder="Input SKU..." value="P3093-A"
+          class="w-full h-12 px-4 bg-gray-50 border-2 border-gray-200 rounded-xl font-bold text-gray-800 text-base focus:border-blue-500 focus:outline-none transition-colors" />
+        <datalist id="catalog-skus"></datalist>
+      </div>
+    </div>
+
+    <div id="part-description" class="text-xs font-medium text-gray-500 min-h-[1.25rem]">Loading catalog description...
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+      <div class="card-blue p-4 rounded-2xl text-center">
+        <div class="text-xs text-gray-500 font-medium">Order quantity</div>
+        <div id="receiving-order-qty" class="text-3xl font-extrabold text-blue-600 mt-1">3</div>
+      </div>
+      <div id="card-receiving-count" class="card-green p-4 rounded-2xl text-center transition-transform">
+        <div class="text-xs text-gray-500 font-medium">Count</div>
+        <div id="receiving-count" class="text-3xl font-extrabold text-emerald-600 mt-1">0</div>
+      </div>
+    </div>
+
+    <div id="scanned-tag-list"
+      class="divide-y divide-gray-200 bg-white rounded-lg border-b border-gray-200 overflow-hidden">
+      <div class="p-4 text-center text-xs text-gray-400 italic">Pull scanner trigger to read RFID tags</div>
+    </div>
+  </div>
+
+  <!-- FIXED BOTTOM BUTTON BAR -->
+  <div id="bottom-actions"
+    class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 backdrop-blur-md border-t border-gray-100 z-20">
+    <div id="packing-actions" class="max-w-md mx-auto flex gap-3 hidden">
+      <button onclick="exportPackingCSV()"
+        class="w-1/2 py-3 bg-blue-50 text-blue-600 font-bold rounded-2xl text-sm hover:bg-blue-100 active:scale-95 transition-all">Export
+        Audit CSV</button>
+      <button onclick="clearPackingCount()"
+        class="w-1/2 py-3 bg-red-50 text-red-600 font-bold rounded-2xl text-sm hover:bg-red-100 active:scale-95 transition-all">Clear
+        Count</button>
+    </div>
+
+    <div id="receiving-actions" class="max-w-md mx-auto flex gap-3 hidden">
+      <button onclick="commitReceiving()"
+        class="w-1/2 py-3 bg-blue-50 text-blue-600 font-bold rounded-2xl text-sm hover:bg-blue-100 active:scale-95 transition-all">Export
+        Audit CSV</button>
+      <button onclick="clearReceivingCount()"
+        class="w-1/2 py-3 bg-red-50 text-red-600 font-bold rounded-2xl text-sm hover:bg-red-100 active:scale-95 transition-all">Clear
+        Count</button>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'http://192.168.1.108:3001';
+    let catalogMap = {};
+    let mockOrders = {};
+
+    let activeMainTab = "packing";
+    let detailMode = "order";
+    let activeOrderKey = "";
+    let activeSkuKey = "";
+    let currentPrefix = "DW";
+
+    let activeReceivingTags = [];
+    let packingScans = JSON.parse(localStorage.getItem('packing_scanned_data') || '{}');
+    let rfidDatabase = JSON.parse(localStorage.getItem('rfid_database') || '{}');
+
+    // Web Audio Synthesizer
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep(freq = 880, type = 'sine', duration = 0.12) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.value = freq;
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + duration);
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function rollUpdate(elementId, newText) {
+      const el = document.getElementById(elementId);
+      if (!el || el.innerText === String(newText)) return;
+      el.classList.remove('animate-roll');
+      void el.offsetWidth;
+      el.classList.add('animate-roll');
+      setTimeout(() => { el.innerText = newText; }, 100);
+    }
+
+    function triggerAnimation(elementId, animClass) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      el.classList.remove('animate-pop', 'animate-shake');
+      void el.offsetWidth;
+      el.classList.add(animClass);
+    }
+
+    // Catalog & Server Loaders
+    async function loadCatalog() {
+      try {
+        const response = await fetch('./catalog.json');
+        if (!response.ok) return;
+        const data = await response.json();
+        const datalist = document.getElementById('catalog-skus');
+        datalist.innerHTML = '';
+
+        if (Array.isArray(data)) {
+          data.forEach(item => {
+            if (item.sku) {
+              catalogMap[item.sku] = item.description || '';
+              const option = document.createElement('option');
+              option.value = item.sku;
+              datalist.appendChild(option);
+            }
+          });
+        }
+        updateDescription();
+      } catch (err) { console.warn('Catalog load issue:', err); }
+    }
+
+    async function fetchServerOrders() {
+      try {
+        const res = await fetch(`${API_BASE}/api/orders`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.orders) mockOrders = data.orders;
+        if (data.scans) packingScans = data.scans;
+        renderOrdersList();
+      } catch (err) { console.warn('Server offline, using local data.'); }
+    }
+
+    // Hardware Focus Lock & Live Diagnostic Indicator
+    const listener = document.getElementById('rfid-listener');
+    const focusStatus = document.getElementById('focus-status');
+    const lastReadTag = document.getElementById('last-read-tag');
+
+    function keepFocus() {
+      const active = document.activeElement;
+      if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT') && active.id !== 'rfid-listener') {
+        focusStatus.innerText = '● USER TYPING';
+        focusStatus.className = 'text-amber-400 font-bold';
+        return;
+      }
+      listener.focus({ preventScroll: true });
+      focusStatus.innerText = '● SCANNER READY';
+      focusStatus.className = 'text-emerald-400 font-bold';
+    }
+    setInterval(keepFocus, 500);
+    document.addEventListener('click', keepFocus);
+
+    // Main Tab Switcher
+    function switchMainTab(tab) {
+      activeMainTab = tab;
+      document.getElementById('tab-packing').className = tab === 'packing' ? 'w-1/2 py-3 border-b-2 border-blue-600 text-blue-600 font-bold transition-all duration-200' : 'w-1/2 py-3 text-gray-400 font-semibold transition-all duration-200';
+      document.getElementById('tab-receiving').className = tab === 'receiving' ? 'w-1/2 py-3 border-b-2 border-blue-600 text-blue-600 font-bold transition-all duration-200' : 'w-1/2 py-3 text-gray-400 font-semibold transition-all duration-200';
+
+      if (tab === 'packing') {
+        document.getElementById('view-receiving').classList.add('hidden');
+        document.getElementById('receiving-actions').classList.add('hidden');
+        document.getElementById('screen-packing-list').classList.remove('hidden');
+        document.getElementById('top-tabs').classList.remove('hidden');
+        renderOrdersList();
+      } else {
+        document.getElementById('screen-packing-list').classList.add('hidden');
+        document.getElementById('screen-packing-detail').classList.add('hidden');
+        document.getElementById('packing-actions').classList.add('hidden');
+
+        document.getElementById('top-tabs').classList.remove('hidden');
+        document.getElementById('view-receiving').classList.remove('hidden');
+        document.getElementById('receiving-actions').classList.remove('hidden');
+        renderScannedList();
+      }
+      keepFocus();
+    }
+
+    function renderOrdersList() {
+      const container = document.getElementById('orders-list');
+      const orderKeys = Object.keys(mockOrders);
+
+      if (orderKeys.length === 0) {
+        container.innerHTML = `<div class="p-6 text-center text-sm text-gray-400 font-medium">No open shipping orders found in Fishbowl</div>`;
+        return;
+      }
+
+      container.innerHTML = Object.entries(mockOrders).map(([id, data]) => `
+        <div onclick="openOrder('${id}')" class="p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50 active:bg-gray-100 transition">
+          <div>
+            <div class="font-bold text-gray-900 text-base">${id}</div>
+            <div class="text-sm text-gray-400 font-medium">${data.customer}</div>
+          </div>
+          <button class="text-gray-400 p-1">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function openOrder(orderId) {
+      activeOrderKey = orderId;
+      document.getElementById('screen-packing-list').classList.add('hidden');
+      document.getElementById('screen-packing-detail').classList.remove('hidden');
+      document.getElementById('packing-actions').classList.remove('hidden');
+
+      transitionToOrderView();
+    }
+
+    function transitionToOrderView() {
+      detailMode = "order";
+
+      const orderTitle = document.getElementById('order-detail-id');
+      orderTitle.className = "text-3xl font-bold text-gray-800 transition-all duration-300";
+      orderTitle.innerText = activeOrderKey;
+
+      const badge = document.getElementById('order-catalog-badge');
+      badge.classList.remove('opacity-0', 'scale-90');
+
+      const skuHeader = document.getElementById('header-sku-container');
+      skuHeader.classList.add('h-0', 'opacity-0', 'translate-y-2');
+      skuHeader.classList.remove('h-8', 'opacity-100', 'translate-y-0');
+
+      const order = mockOrders[activeOrderKey];
+      const orderScans = packingScans[activeOrderKey] || {};
+      const skuCounts = {};
+      Object.values(orderScans).forEach(sku => { skuCounts[sku] = (skuCounts[sku] || 0) + 1; });
+
+      let totalItems = 0;
+      if (order && order.items) order.items.forEach(item => totalItems += item.qty);
+
+      rollUpdate('blue-card-label', 'Item Total');
+      rollUpdate('blue-card-num', totalItems);
+      rollUpdate('green-card-label', 'SKU number');
+      rollUpdate('green-card-num', order && order.items ? order.items.length : 0);
+
+      document.getElementById('table-header-row').className = "flex justify-between text-xs font-semibold text-gray-500 px-1 pb-2 border-b border-gray-200";
+      document.getElementById('col-head-1').innerText = "SKU & Description";
+      document.getElementById('col-head-2').innerText = "Qty";
+      document.getElementById('col-head-2').className = "w-2/12 text-center";
+      document.getElementById('col-head-3').innerText = "Count";
+
+      const expectedSkusSet = new Set(order && order.items ? order.items.map(i => i.sku) : []);
+      const unexpectedSkus = Object.keys(skuCounts).filter(s => !expectedSkusSet.has(s));
+
+      let rowsHtml = '';
+      if (order && order.items) {
+        order.items.forEach(item => {
+          const count = skuCounts[item.sku] || 0;
+          rowsHtml += `
+            <div onclick="drillIntoSku('${item.sku}')" class="py-3.5 px-1 flex justify-between items-center cursor-pointer hover:bg-gray-50 border-b border-gray-100 active:scale-[0.98] transition">
+              <div class="w-7/12">
+                <div class="font-bold text-gray-900 text-sm">${item.sku}</div>
+                <div class="text-xs text-gray-400 truncate">${catalogMap[item.sku] || item.desc}</div>
+              </div>
+              <div class="w-2/12 text-center font-bold text-gray-800 text-sm">${item.qty}</div>
+              <div class="w-3/12 text-right font-bold text-blue-600 text-base">${count}</div>
+            </div>
+          `;
+        });
+      }
+
+      unexpectedSkus.forEach(sku => {
+        const count = skuCounts[sku];
+        rowsHtml += `
+          <div onclick="drillIntoSku('${sku}')" class="py-3.5 px-1 flex justify-between items-center cursor-pointer hover:bg-red-50/50 border-b border-gray-100 active:scale-[0.98] transition animate-slide-up">
+            <div class="w-7/12">
+              <div class="font-bold text-red-500 text-sm">${sku}</div>
+              <div class="text-xs text-gray-400 truncate">${catalogMap[sku] || 'Unordered Item'}</div>
+            </div>
+            <div class="w-2/12 text-center font-bold text-gray-300 text-sm"></div>
+            <div class="w-3/12 text-right font-bold text-red-500 text-base">${count}</div>
+          </div>
+        `;
+      });
+
+      document.getElementById('detail-table-rows').innerHTML = rowsHtml;
+      keepFocus();
+    }
+
+    function drillIntoSku(sku) {
+      activeSkuKey = sku;
+      detailMode = "sku";
+
+      const orderTitle = document.getElementById('order-detail-id');
+      orderTitle.className = "text-sm font-semibold text-gray-400 transition-all duration-300";
+
+      const badge = document.getElementById('order-catalog-badge');
+      badge.classList.add('opacity-0', 'scale-90');
+
+      document.getElementById('sku-detail-id').innerText = activeSkuKey;
+      const skuHeader = document.getElementById('header-sku-container');
+      skuHeader.classList.remove('h-0', 'opacity-0', 'translate-y-2');
+      skuHeader.classList.add('h-8', 'opacity-100', 'translate-y-0');
+
+      const order = mockOrders[activeOrderKey];
+      const item = order ? order.items.find(i => i.sku === activeSkuKey) : null;
+      const orderScans = packingScans[activeOrderKey] || {};
+      const matchingTags = Object.entries(orderScans).filter(([tag, s]) => s === activeSkuKey).map(([tag]) => tag);
+
+      rollUpdate('blue-card-label', 'Order quantity');
+      rollUpdate('blue-card-num', item ? item.qty : '-');
+      rollUpdate('green-card-label', 'Count');
+      rollUpdate('green-card-num', matchingTags.length);
+
+      document.getElementById('col-head-1').innerText = "Tag EPC String";
+      document.getElementById('col-head-2').innerText = "";
+      document.getElementById('col-head-2').className = "hidden";
+      document.getElementById('col-head-3').innerText = "";
+
+      const container = document.getElementById('detail-table-rows');
+      if (matchingTags.length === 0) {
+        container.innerHTML = `<div class="p-4 text-center text-xs text-gray-400 italic">No RFID tags scanned for this SKU yet</div>`;
+        return;
+      }
+
+      container.innerHTML = matchingTags.map(tag => `
+        <div class="py-3.5 px-1 flex justify-between items-center text-xs font-mono text-gray-600 border-b border-gray-100 animate-slide-up">
+          <span>${tag}</span>
+          <button class="text-gray-400">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
+          </button>
+        </div>
+      `).join('');
+      keepFocus();
+    }
+
+    function handleDetailBack() {
+      if (detailMode === 'sku') {
+        transitionToOrderView();
+      } else {
+        document.getElementById('screen-packing-detail').classList.add('hidden');
+        document.getElementById('packing-actions').classList.add('hidden');
+        document.getElementById('screen-packing-list').classList.remove('hidden');
+        renderOrdersList();
+      }
+    }
+
+    // Receiving Prefix & Description
+    function togglePrefixDropdown() { document.getElementById('prefix-menu').classList.toggle('hidden'); }
+    function selectPrefix(prefix, colorHex) {
+      currentPrefix = prefix;
+      document.getElementById('prefix-text').innerText = prefix;
+      document.getElementById('prefix-swatch').style.backgroundColor = colorHex;
+      document.getElementById('prefix-menu').classList.add('hidden');
+      updateDescription();
+    }
+
+    // SKU INPUT SAFEGUARD ENGINE
+    const partInput = document.getElementById('part-input');
+    let lastValidSkuText = partInput.value;
+
+    partInput.addEventListener('focus', function () {
+      lastValidSkuText = this.value;
+    });
+
+    partInput.addEventListener('input', function (e) {
+      if (this.value.includes('\n') || this.value.includes('\r')) {
+        handlePartInputScan(this);
+        return;
+      }
+      lastValidSkuText = this.value;
+      updateDescription();
+    });
+
+    partInput.addEventListener('keydown', function (e) {
+      if (e.keyCode === 13 || e.key === 'Enter') {
+        e.preventDefault();
+        handlePartInputScan(this);
+      }
+    });
+
+    function handlePartInputScan(inputEl) {
+      let fullText = inputEl.value.replace(/[\r\n]/g, '').trim();
+      let scannedTag = fullText;
+
+      if (lastValidSkuText && fullText.startsWith(lastValidSkuText) && fullText.length > lastValidSkuText.length) {
+        scannedTag = fullText.substring(lastValidSkuText.length).trim();
+      }
+
+      inputEl.value = lastValidSkuText;
+      updateDescription();
+
+      if (scannedTag && scannedTag !== lastValidSkuText) {
+        processScannedTag(scannedTag);
+      }
+    }
+
+    function updateDescription() {
+      const rawInput = partInput.value.trim();
+      const fullSku = rawInput.startsWith(currentPrefix + '-') ? rawInput : `${currentPrefix}-${rawInput}`;
+      const desc = catalogMap[fullSku] || catalogMap[rawInput] || "Tall Pantry Cabinet 30\"WX24\"DX93\"H Part A";
+      document.getElementById('part-description').innerText = `Desc: ${desc}`;
+    }
+
+    function renderScannedList() {
+      document.getElementById('receiving-count').innerText = activeReceivingTags.length;
+      const container = document.getElementById('scanned-tag-list');
+
+      if (activeReceivingTags.length === 0) {
+        container.innerHTML = `<div class="p-4 text-center text-xs text-gray-400 italic">Pull scanner trigger to read RFID tags</div>`;
+        return;
+      }
+
+      container.innerHTML = activeReceivingTags.slice().reverse().map((epc, idx) => `
+        <div class="py-3 px-1 flex justify-between items-center text-xs font-mono text-gray-600 border-b border-gray-100 animate-slide-up">
+          <span>${epc}</span>
+          <button onclick="removeTag(${activeReceivingTags.length - 1 - idx})" class="text-gray-400 p-1 hover:text-red-500 active:scale-95 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function removeTag(index) {
+      activeReceivingTags.splice(index, 1);
+      renderScannedList();
+    }
+
+    async function commitReceiving() {
+      if (activeReceivingTags.length === 0) return alert("Please scan at least one RFID tag before receiving.");
+      const rawInput = partInput.value.trim();
+      const fullSku = rawInput.startsWith(currentPrefix + '-') ? rawInput : `${currentPrefix}-${rawInput}`;
+
+      try {
+        await fetch(`${API_BASE}/api/receiving/commit`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sku: fullSku, tags: activeReceivingTags })
+        });
+      } catch (err) { console.warn('Server offline, saving locally.'); }
+
+      activeReceivingTags.forEach(epc => { rfidDatabase[epc] = fullSku; });
+      localStorage.setItem('rfid_database', JSON.stringify(rfidDatabase));
+
+      alert(`Successfully received ${activeReceivingTags.length} tags for ${fullSku}`);
+      activeReceivingTags = [];
+      renderScannedList();
+    }
+
+    // Tag Processing Engine
+    async function processScannedTag(tag) {
+      if (!tag) return;
+      lastReadTag.innerText = `Buffer: [${tag}]`;
+
+      if (activeMainTab === 'receiving') {
+        if (!activeReceivingTags.includes(tag)) {
+          activeReceivingTags.push(tag);
+          playBeep(1046, 'sine', 0.12);
+          triggerAnimation('card-receiving-count', 'animate-pop');
+          renderScannedList();
+        } else {
+          playBeep(440, 'triangle', 0.1);
+        }
+      } else if (activeMainTab === 'packing') {
+        if (document.getElementById('screen-packing-detail').classList.contains('hidden') && activeOrderKey) {
+          openOrder(activeOrderKey);
+        }
+
+        let assignedSku = rfidDatabase[tag] || "SMS-B24";
+        let isExpected = false;
+
+        try {
+          const res = await fetch(`${API_BASE}/api/packing/scan`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ orderId: activeOrderKey, tag })
+          });
+          const data = await res.json();
+          assignedSku = data.sku;
+          isExpected = data.isExpected;
+        } catch (err) {
+          const order = mockOrders[activeOrderKey];
+          isExpected = order ? order.items.some(i => i.sku === assignedSku) : false;
+        }
+
+        if (activeOrderKey) {
+          if (!packingScans[activeOrderKey]) packingScans[activeOrderKey] = {};
+          packingScans[activeOrderKey][tag] = assignedSku;
+          localStorage.setItem('packing_scanned_data', JSON.stringify(packingScans));
+        }
+
+        if (isExpected) {
+          playBeep(1046, 'sine', 0.12);
+          triggerAnimation('card-blue', 'animate-pop');
+          triggerAnimation('card-green', 'animate-pop');
+        } else {
+          playBeep(300, 'sawtooth', 0.3);
+          triggerAnimation('card-blue', 'animate-shake');
+          triggerAnimation('card-green', 'animate-shake');
+        }
+
+        if (detailMode === 'order') transitionToOrderView();
+        if (detailMode === 'sku') drillIntoSku(activeSkuKey);
+      }
+    }
+
+    // MULTI-STREAM SCANNER EVENT ENGINE
+    let scanBufferTimer = null;
+
+    function handleScannerInput() {
+      clearTimeout(scanBufferTimer);
+      scanBufferTimer = setTimeout(() => {
+        const cleanTag = listener.value.replace(/[\r\n]/g, '').trim();
+        if (cleanTag.length >= 3) {
+          listener.value = '';
+          processScannedTag(cleanTag);
+        }
+      }, 100);
+    }
+
+    listener.addEventListener('input', handleScannerInput);
+    listener.addEventListener('keyup', function (e) {
+      if (e.key === 'Enter' || e.keyCode === 13) {
+        clearTimeout(scanBufferTimer);
+        const cleanTag = this.value.replace(/[\r\n]/g, '').trim();
+        this.value = '';
+        if (cleanTag) processScannedTag(cleanTag);
+      }
+    });
+
+    async function clearPackingCount() {
+      if (confirm(`Clear scanned counts for ${activeOrderKey}?`)) {
+        try {
+          await fetch(`${API_BASE}/api/packing/clear/${activeOrderKey}`, { method: 'DELETE' });
+        } catch (err) { console.warn('Server offline, clearing locally.'); }
+
+        delete packingScans[activeOrderKey];
+        localStorage.setItem('packing_scanned_data', JSON.stringify(packingScans));
+        if (detailMode === 'order') transitionToOrderView();
+        if (detailMode === 'sku') drillIntoSku(activeSkuKey);
+      }
+    }
+
+    function clearReceivingCount() {
+      if (confirm("Clear current receiving tag count?")) {
+        activeReceivingTags = [];
+        renderScannedList();
+      }
+    }
+
+    function exportPackingCSV() {
+      const orderScans = packingScans[activeOrderKey] || {};
+      let csv = 'Order_ID,Tag_EPC,SKU\n';
+      Object.entries(orderScans).forEach(([tag, sku]) => { csv += `"${activeOrderKey}","${tag}","${sku}"\n`; });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `Packing_Audit_${activeOrderKey}.csv`;
+      a.click();
+    }
+
+    // Init Sequence
+    loadCatalog();
+    fetchServerOrders();
+    switchMainTab('packing');
+  </script>
+</body>
+
+</html>

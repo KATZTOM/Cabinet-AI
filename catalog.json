@@ -1,0 +1,5803 @@
+[
+    {
+        "sku": "AC-BF3",
+        "description": "Base Filler 3\"",
+        "dimensions": {
+            "length_in": 39.0,
+            "width_in": 8.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 9.26,
+        "pcs_per_box": 5
+    },
+    {
+        "sku": "AC-BF6",
+        "description": "Base Filler 6\u00b0",
+        "dimensions": {
+            "length_in": 39.0,
+            "width_in": 8.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 17.64,
+        "pcs_per_box": 5
+    },
+    {
+        "sku": "AC-BM 4 1/4",
+        "description": "Base Molding 4 1/4\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 9.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-CM 2 1/2",
+        "description": "Crown Molding 2 1/2\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 6.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 31.53,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-CM 4 1/2",
+        "description": "Crown Molding 4 1/2\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 8.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 39.68,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-CMAB",
+        "description": "Angle Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 8.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-COV",
+        "description": "Cove Crown Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 9.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-COV8",
+        "description": "Cove Crown Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 9.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-Column 3.5 3.5",
+        "description": "Column 3.5\"X3.5\"X35\"",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 24.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 11.02
+    },
+    {
+        "sku": "Corbel",
+        "description": "AC-Corbel",
+        "dimensions": {
+            "length_in": 16.0,
+            "width_in": 9.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 9.3
+    },
+    {
+        "sku": "AC-DM1 1/8",
+        "description": "Decorative Molding. 1 1/8\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 4.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-DWP3",
+        "description": "Dishwasher Panel 3\"",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 52.91
+    },
+    {
+        "sku": "Dummy Door 1230",
+        "description": "AC-Dummy Door 1230",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 25.35
+    },
+    {
+        "sku": "Dummy Door 1236",
+        "description": "AC-Dummy Door 1236",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 28.66
+    },
+    {
+        "sku": "Dummy Door 1242.",
+        "description": "AC-Dummy Door 1242",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 35.27
+    },
+    {
+        "sku": "Dummy Door B24",
+        "description": "AC-Dummy Door B24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 68.34
+    },
+    {
+        "sku": "Dummy Door B36",
+        "description": "AC-Dummy Door B36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 95.9
+    },
+    {
+        "sku": "Dummy Door P1884 DOWN",
+        "description": "AC-Dummy Door P1884 DOWN",
+        "dimensions": {
+            "length_in": 85.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 79.37
+    },
+    {
+        "sku": "Dummy Door P1884 UP",
+        "description": "AC-Dummy Door P1884 UP",
+        "dimensions": {
+            "length_in": 85.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 79.37
+    },
+    {
+        "sku": "Dummy Door P1890 UP",
+        "description": "AC-Dummy Door P1890 UP",
+        "dimensions": {
+            "length_in": 91.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 87.08
+    },
+    {
+        "sku": "AC-Dummy",
+        "description": "Dummy Door P1890 DOWN",
+        "dimensions": {
+            "length_in": 91.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 87.08
+    },
+    {
+        "sku": "AC-Dummy",
+        "description": "Dummy Door P1893 DOWN",
+        "dimensions": {
+            "length_in": 94.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 85.98
+    },
+    {
+        "sku": "AC-Dummy",
+        "description": "Door P1893 UP",
+        "dimensions": {
+            "length_in": 94.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 85.98
+    },
+    {
+        "sku": "Dummy Door P1896 DOWN",
+        "description": "AC-Dummy Door P1896 DOWN",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 90.39
+    },
+    {
+        "sku": "Dummy Door P1896 UP",
+        "description": "ACDummy -Door P1896 UP",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 90.39
+    },
+    {
+        "sku": "AC-F11/2 96",
+        "description": "Tall Filler 1 1/2\" X 96\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 5.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-F3 96",
+        "description": "Tall Filler 3\" X 96\"",
+        "dimensions": {
+            "length_in": 96,
+            "width_in": 6.5,
+            "height_in": 4.2
+        },
+        "weight_lbs": 46.3,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-F696",
+        "description": "Tall Filler 6\" X 96\"",
+        "dimensions": {
+            "length_in": 96,
+            "width_in": 8.2,
+            "height_in": 6.5
+        },
+        "weight_lbs": 88.18,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-LRM",
+        "description": "Light Rail Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 8.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-LRM 1-1/2",
+        "description": "Light Rail Molding 1-1/2\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 6.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "AC-DCM3",
+        "description": "Outside Corner Molding 36\"",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 3.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-OCM36",
+        "description": "Outside Comer Molding 36\"",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 3.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-OCMB",
+        "description": "Outside Corner Molding 96\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 3.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-PANEL",
+        "description": "Skin Panel",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 49.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 105.38
+    },
+    {
+        "sku": "AC-PANEL 96\"X24\"X3/4\"",
+        "description": "One Side Finished Panel 24 D",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 48.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 35.45
+    },
+    {
+        "sku": "AC-PANEL 96x24x3/4",
+        "description": "Skin Panel 24\"X96\"X3/4\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 25.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 35.45
+    },
+    {
+        "sku": "AC-PANEL 96x48x1/2",
+        "description": "Skin Panel 48\"X96\"X1/2\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 49.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 51.15
+    },
+    {
+        "sku": "X96\"X1/4\"",
+        "description": "Skin Panel 48\"",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 49.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 25.57
+    },
+    {
+        "sku": "AC-QRM",
+        "description": "Quarter Round Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 5.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-REP3096",
+        "description": "30\" X 96 Refrigerator Panel",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 31.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-R/P 1 1/2",
+        "description": "Fridge Panel 1 1/2\"",
+        "dimensions": {
+            "length_in": 98,
+            "width_in": 26.5,
+            "height_in": 1.5
+        },
+        "weight_lbs": 123.46
+    },
+    {
+        "sku": "AC-SHOE BASE",
+        "description": "Shoe Base Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 3.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "AC-SM",
+        "description": "Scribe Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 9.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 6.94
+    },
+    {
+        "sku": "AC-WF30",
+        "description": "Wall Filler 3\"X30\"",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 1.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "AC-WF36",
+        "description": "Wall Filler 3\"X36\"",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 1.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "AC-WF42",
+        "description": "Wall Filler 3\"X42\"",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 26.46,
+        "pcs_per_box": 10,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "AC-WF642",
+        "description": "Wall Filler 6\"X42\"",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 1.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "12\" Drawer Slide",
+        "description": "305mm Drawer slide for 15\" Deep",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 0.0
+    },
+    {
+        "sku": "15\" Drawer Slide",
+        "description": "381mm Drawer slide for 18\" Deep",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 0.0
+    },
+    {
+        "sku": "TS-18\" Drawer Slide",
+        "description": "457 mm Drawer slide for 21\" Deep",
+        "dimensions": {
+            "length_in": 25,
+            "width_in": 3,
+            "height_in": 3
+        },
+        "weight_lbs": 42
+    },
+    {
+        "sku": "TS-21\" Drawer Slide",
+        "description": "533 mm Drawer slide for 24\" Deep",
+        "dimensions": {
+            "length_in": 29,
+            "width_in": 3,
+            "height_in": 3
+        },
+        "weight_lbs": 7
+    },
+    {
+        "sku": "SD-18\" Drawer Slide",
+        "description": "457 mm Drawer slide for 21\" Deep",
+        "dimensions": {
+            "length_in": 25,
+            "width_in": 3,
+            "height_in": 3
+        },
+        "weight_lbs": 42
+    },
+    {
+        "sku": "SD-21\" Drawer Slide",
+        "description": "533 mm Drawer slide for 24\" Deep",
+        "dimensions": {
+            "length_in": 29,
+            "width_in": 3,
+            "height_in": 3
+        },
+        "weight_lbs": 7
+    },
+    {
+        "sku": "24\" Inches Top Drawer Slide",
+        "description": "610 mm Drawer slide for 27\" Deep",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "B06",
+        "description": "Base Cabinet 6\"WX24\"DX34.5\"H",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 30.86,
+        "assembled_dimensions": {
+            "width_in": 6.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B06SR",
+        "description": "B06SR",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 26.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 42.99,
+        "assembled_dimensions": {
+            "width_in": 6.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B09",
+        "description": "B09",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 34.17,
+        "assembled_dimensions": {
+            "width_in": 9.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B09SR",
+        "description": "B09SR",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 26.0,
+            "height_in": 10.0
+        },
+        "weight_lbs": 56.22,
+        "assembled_dimensions": {
+            "width_in": 9.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B12",
+        "description": "B12",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 47.4,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B12SR",
+        "description": "B12SR",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 26.0,
+            "height_in": 13.0
+        },
+        "weight_lbs": 63.93,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B15",
+        "description": "B15",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B18",
+        "description": "B18",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 56.22,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B21",
+        "description": "B21",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 61.73,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B24",
+        "description": "B24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 68.34,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B27",
+        "description": "B27",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 73.85,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B30",
+        "description": "B30",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 79.37,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B33",
+        "description": "B33",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 92.59,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B36",
+        "description": "B36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 95.9,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B39",
+        "description": "B39",
+        "dimensions": {
+            "length_in": 40.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 104.72,
+        "assembled_dimensions": {
+            "width_in": 39.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B42",
+        "description": "B42",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 108.03,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BBC39",
+        "description": "BBC39",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 88.18,
+        "assembled_dimensions": {
+            "width_in": 39.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BBC42",
+        "description": "BBC42",
+        "dimensions": {
+            "length_in": 40.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 81.57,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BBC45",
+        "description": "BBC45",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 26.01,
+        "assembled_dimensions": {
+            "width_in": 45.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BEC24",
+        "description": "BCRS45-",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 24.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 59.52
+    },
+    {
+        "sku": "BF3",
+        "description": "BF3",
+        "dimensions": {
+            "length_in": 39.0,
+            "width_in": 8.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 9.26
+    },
+    {
+        "sku": "BF6",
+        "description": "BF6",
+        "dimensions": {
+            "length_in": 39.0,
+            "width_in": 8.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 17.64
+    },
+    {
+        "sku": "BFF3",
+        "description": "BFF3",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "BLS33",
+        "description": "BLS33",
+        "dimensions": {
+            "length_in": 27.0,
+            "width_in": 27.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 74.96,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 33.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BLS36",
+        "description": "BLS36",
+        "dimensions": {
+            "length_in": 30.0,
+            "width_in": 30.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 86.86,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 36.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "LSK-33",
+        "description": "Lazy Susan Shelf 33",
+        "dimensions": {
+            "length_in": 27.5,
+            "width_in": 27.5,
+            "height_in": 4.8
+        },
+        "weight_lbs": 10
+    },
+    {
+        "sku": "LSK-36",
+        "description": "Lazy Susan Shelf 36",
+        "dimensions": {
+            "length_in": 30.5,
+            "width_in": 30.5,
+            "height_in": 5
+        },
+        "weight_lbs": 15
+    },
+    {
+        "sku": "BM 4 1/4",
+        "description": "BLS36-TRAY",
+        "dimensions": {
+            "length_in": 30.0,
+            "width_in": 30.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 86.86
+    },
+    {
+        "sku": "BMC24",
+        "description": "BMC24",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 59.52,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BMC30",
+        "description": "BMC30",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 73.85,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "BOES12",
+        "description": "BOES12",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 57.32,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "BPRP",
+        "description": "BPRP",
+        "dimensions": {
+            "length_in": 50.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 51.81
+    },
+    {
+        "sku": "BWR15",
+        "description": "BWB18 Bottom Drawer Box",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "BWB18 plastic dusthin",
+        "description": "BWB18 plastic dusthin",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+        {
+        "sku": "CM 2 1/2",
+        "description": "CM 2 1/2",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 8.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 31.53,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "CM 4 1/2",
+        "description": "CM 4 1/2",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 8.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 39.68,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "COV8",
+        "description": "COV8",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 9.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": null,
+        "pcs_per_box": 10
+    },
+    {
+        "sku": "Column 3.5 3.5",
+        "description": "Column 3.5 3.5",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 24.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 11.02
+    },
+    {
+        "sku": "Corbel",
+        "description": "Corbel",
+        "dimensions": {
+            "length_in": 16.0,
+            "width_in": 9.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 9.3
+    },
+    {
+        "sku": "DB12",
+        "description": "DB12",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB15",
+        "description": "DB15",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 59.52,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB18",
+        "description": "DB18",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 66.14,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB21",
+        "description": "DB21",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 72.75,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB24",
+        "description": "DB24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 88.18,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB24-2",
+        "description": "DB24-2",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 85.54,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB27",
+        "description": "DB27",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 85.98,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB30",
+        "description": "DB30",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 92.59,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB30-2",
+        "description": "DB30-2",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 94.8,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB33",
+        "description": "DB33",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 34.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB36",
+        "description": "DB36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 16,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DB36-2",
+        "description": "DB36-2",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 15.87,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "DM1 1/8",
+        "description": "DM1 1/8",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 4.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "DWP3",
+        "description": "DWP3",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 52.91
+    },
+    {
+        "sku": "B33 FHD",
+        "description": "B33 Full Height One Door",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 16,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "B36 FHD",
+        "description": "B36 Full Height One Door",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 6
+        },
+        "weight_lbs": 16,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "Base 15\" Full Height Door Only",
+        "description": "Base 15\" Full Height Door Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Base 18\" Full Height Door Only",
+        "description": "Base 18\" Full Height Door Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Base 21\" Full Height Door Only",
+        "description": "Base 21\" Full Height Door Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Base 24\" Full Height Single Door",
+        "description": "Base 24\" Full Height Single Door",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Single Door",
+        "description": "Base 27\" Full Height",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Base 30\" Full Height Single Door",
+        "description": "Base 30\" Full Height Single Door",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Base 33\" Full Height Single Door",
+        "description": "Base 33\" Full Height Single Door",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Base 36\" Full Height Single Door",
+        "description": "Base 36\" Full Height Single Door",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Dummy Door 1230",
+        "description": "Dummy Door 1230",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 25.35
+    },
+    {
+        "sku": "Dummy Door 1236",
+        "description": "Dummy Door 1236",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 28.66
+    },
+    {
+        "sku": "Dummy Door 1242",
+        "description": "Dummy Door 1242",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 35.27
+    },
+    {
+        "sku": "Dummy Door B24",
+        "description": "Dummy Door B24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 68.34
+    },
+    {
+        "sku": "Dummy",
+        "description": "Door B36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 95.9
+    },
+    {
+        "sku": "Dummy Door P1884 Down",
+        "description": "Dummy Door P1884 Down",
+        "dimensions": {
+            "length_in": 85.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 79.37
+    },
+    {
+        "sku": "Dummy Door P1884 Up",
+        "description": "Dummy Door P1884 Up",
+        "dimensions": {
+            "length_in": 85.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 79.37
+    },
+    {
+        "sku": "Dummy Door P189 Down",
+        "description": "Dummy Door P189 Down",
+        "dimensions": {
+            "length_in": 91.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 87.08
+    },
+    {
+        "sku": "Dummy Door P1890 Down",
+        "description": "Dummy Door P1890 Down",
+        "dimensions": {
+            "length_in": 91.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 87.08
+    },
+    {
+        "sku": "Dummy Door P1890 Up",
+        "description": "Dummy Door P1890 Up",
+        "dimensions": {
+            "length_in": 91.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 87.08
+    },
+    {
+        "sku": "Dummy Door P1893 Down",
+        "description": "Dummy Door P1893 Down",
+        "dimensions": {
+            "length_in": 94.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 85.98
+    },
+    {
+        "sku": "Dummy door P1893 UP",
+        "description": "Dummy door P1893 UP",
+        "dimensions": {
+            "length_in": 94.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 85.98
+    },
+    {
+        "sku": "Dummy Door P1896 Up",
+        "description": "Dummy Door P1896 Up",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 90.39
+    },
+    {
+        "sku": "DUMMY Door B36",
+        "description": "DUMMY Door B36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 95.9
+    },
+    {
+        "sku": "F11/2 96",
+        "description": "Edge Banding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 5.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "F3.96",
+        "description": "F3.96",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 46.3
+    },
+    {
+        "sku": "F696",
+        "description": "F696",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 88.18
+    },
+    {
+        "sku": "FSB36",
+        "description": "FSB36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "HCC36",
+        "description": "HCC36-A",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 39.0,
+            "height_in": 23.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "HCC36-B",
+        "description": "HCC36-B",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "HCC3642-B",
+        "description": "HCC3642-B",
+        "dimensions": {
+            "length_in": 22.0,
+            "width_in": 13.0,
+            "height_in": 13.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "HCC42",
+        "description": "HCC42",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 45.0,
+            "height_in": 23.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "HCC42-A",
+        "description": "HCC42-A",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "KD30",
+        "description": "HCC42-B",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 21.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 24.25
+    },
+    {
+        "sku": "KD27",
+        "description": "KD27",
+        "dimensions": {
+            "length_in": 28.0,
+            "width_in": 21.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "KD30",
+        "description": "DOOR/FRAME",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "OC31 1/2 84D",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX84\"H",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 157.63,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "OC31 1/2 84D-A",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 110.23
+    },
+    {
+        "sku": "OC31 1/2 84D-B",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 47.4
+    },
+    {
+        "sku": "OC31 1/2 84S",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX84\"H",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 196.22,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "OC31 1/2 84S-A",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 112.44
+    },
+    {
+        "sku": "OC31 1/2 84S-B",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 24.0, "height_in": 8.0 },
+        "weight_lbs": 83.78
+    },
+    {
+        "sku": "OC31 1/2 84SM",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX84\"H",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 151.02,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "OC31 1/2 84SM-A",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 100.31
+    },
+    {
+        "sku": "OC31 1/2 84SM-B",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 50.71
+    },
+    {
+        "sku": "OC31 1/2 84SMS",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX84\"H",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 179.68,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "OC31 1/2 84SMS-A",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 123.46
+    },
+    {
+        "sku": "OC31 1/2 84SMS-B",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 56.22
+    },
+    {
+        "sku": "OC31 1/2 90D",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX90\"H",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 147.71,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "OC31 1/2 90D-A",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 101.41
+    },
+    {
+        "sku": "OC31 1/2 90D-B",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 46.3
+    },
+    {
+        "sku": "OC31 1/2 90S",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX90\"H",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 184.09,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "OC31 1/2 90S-A",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 99.21
+    },
+    {
+        "sku": "OC31 1/2 90S-B",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 24.0, "height_in": 8.0 },
+        "weight_lbs": 84.88
+    },
+    {
+        "sku": "OC31 1/2 90SM",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX90\"H",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 140.89,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "OC31 1/2 90SM-A",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 92.59
+    },
+    {
+        "sku": "OC31 1/2 90SM-B",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 48.3
+    },
+    {
+        "sku": "OC31 1/2 90SMS",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX90\"H",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 155.43,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "OC31 1/2 90SMS-A",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 99.21
+    },
+    {
+        "sku": "OC31 1/2 90SMS-B",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 56.22
+    },
+    {
+        "sku": "OC31 1/2 93D",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX93\"H",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 147.71,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "OC31 1/2 93D-A",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 99.21
+    },
+    {
+        "sku": "OC31 1/2 93D-B",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 48.5
+    },
+    {
+        "sku": "OC31 1/2 93S",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX93\"H",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 218.26,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "OC31 1/2 93S-A",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 123.46
+    },
+    {
+        "sku": "OC31 1/2 93S-B",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 24.0, "height_in": 8.0 },
+        "weight_lbs": 94.8
+    },
+    {
+        "sku": "OC31 1/2 93SM",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX93\"H",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 175.27,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "OC31 1/2 93SM-A",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 109.13
+    },
+    {
+        "sku": "OC31 1/2 93SM-B",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 66.14
+    },
+    {
+        "sku": "OC31 1/2 93SMS",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX93\"H",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 178.57,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "OC31 1/2 93SMS-A",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 110.23
+    },
+    {
+        "sku": "OC31 1/2 93SMS-B",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 68.34
+    },
+    {
+        "sku": "OC31 1/2 96D",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX96\"H",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 170.86,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "OC31 1/2 96D-A",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 114.64
+    },
+    {
+        "sku": "OC31 1/2 96D-B",
+        "description": "Double Oven Cabinet 31.5\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 56.22
+    },
+    {
+        "sku": "OC31 1/2 96S",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX96\"H",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 222.23,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "OC31 1/2 96S-A",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 127.43
+    },
+    {
+        "sku": "OC31 1/2 96S-B",
+        "description": "Single Oven Cabinet 31.5\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 24.0, "height_in": 8.0 },
+        "weight_lbs": 94.8
+    },
+    {
+        "sku": "OC31 1/2 96SM",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX96\"H",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 182.98,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "OC31 1/2 96SM-A",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 114.64
+    },
+    {
+        "sku": "OC31 1/2 96SM-B",
+        "description": "Single Oven Microwave Cabinet 31.5\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 68.34
+    },
+    {
+        "sku": "OC31 1/2 96SMS",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX96\"H",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 25.0 },
+        "weight_lbs": 163.14,
+        "assembled_dimensions": { "width_in": 31.5, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "OC31 1/2 96SMS-A",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 32.0, "height_in": 4.0 },
+        "weight_lbs": 94.8
+    },
+    {
+        "sku": "OC31 1/2 96SMS-B",
+        "description": "Single Oven Microwave Separate Cabinet 31.5\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 31.0, "width_in": 28.0, "height_in": 4.0 },
+        "weight_lbs": 68.34
+    },
+    {
+        "sku": "OCM8",
+        "description": "OCM8",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 3.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "P1884 Down Dummy Door",
+        "description": "P1884 Down Dummy Door",
+        "dimensions": {
+            "length_in": 50.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 65.7,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 84.0
+        }
+    },
+    {
+        "sku": "P1884 Up Dummy Door",
+        "description": "P1884 Up Dummy Door",
+        "dimensions": {
+            "length_in": 30.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 90.39,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 84.0
+        }
+    },
+    {
+        "sku": "P1890 Down Dummy Door",
+        "description": "P1890 Down Dummy Door",
+        "dimensions": {
+            "length_in": 50.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 83.78,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 90.0
+        }
+    },
+    {
+        "sku": "P1890 Up Dummy Door",
+        "description": "P1890 Up Dummy Door",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 94.8,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 90.0
+        }
+    },
+    {
+        "sku": "P1890-DOOR/FRAME",
+        "description": "P1890-DOOR/FRAME",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 90.0
+        }
+    },
+    {
+        "sku": "P1893 dummy",
+        "description": "P1893 Up Dummy Door",
+        "dimensions": {
+            "length_in": 94.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 85.98,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 93.0
+        }
+    },
+    {
+        "sku": "P1896 Down Dummy Door",
+        "description": "P1896 Down Dummy Door",
+        "dimensions": {
+            "length_in": 50.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 91.49,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 96.0
+        }
+    },
+    {
+        "sku": "P1896 Up Dummy Door",
+        "description": "P1896 Up Dummy Door",
+        "dimensions": {
+            "length_in": 42.0,
+            "width_in": 25.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 88.18,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 96.0
+        }
+    },
+    {
+        "sku": "PANEL 24X96X3/4",
+        "description": "PANEL 24X96X3/4",
+        "dimensions": {
+            "length_in": 39.0,
+            "width_in": 8.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 9.26
+    },
+    {
+        "sku": "PANEL 96x48x1/2",
+        "description": "PANEL 96x48x1/2",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 49.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 51.15
+    },
+    {
+        "sku": "PANEL 96x48x1/4",
+        "description": "Prime Finished B12 Mini Box",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 49.0,
+            "height_in": 1.0
+        },
+        "weight_lbs": 105.38
+    },
+    {
+        "sku": "QRM",
+        "description": "QRM",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 5.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "R/P 11/2",
+        "description": "R/P 11/2",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 123.46
+    },
+    {
+        "sku": "ROT12",
+        "description": "ROT12",
+        "dimensions": {
+            "length_in": 23.0,
+            "width_in": 8.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT15",
+        "description": "ROT15",
+        "dimensions": {
+            "length_in": 23.0,
+            "width_in": 11.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT18",
+        "description": "ROT18",
+        "dimensions": {
+            "length_in": 23.0,
+            "width_in": 14.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT21",
+        "description": "ROT21",
+        "dimensions": {
+            "length_in": 23.0,
+            "width_in": 17.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT24",
+        "description": "ROT24",
+        "dimensions": {
+            "length_in": 23.0,
+            "width_in": 20.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT27",
+        "description": "ROT27",
+        "dimensions": {
+            "length_in": 24.0,
+            "width_in": 20.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT30",
+        "description": "ROT30",
+        "dimensions": {
+            "length_in": 27.0,
+            "width_in": 19.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT33",
+        "description": "ROT33",
+        "dimensions": {
+            "length_in": 30.0,
+            "width_in": 19.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT36",
+        "description": "Roll Out Tray 36\"",
+        "dimensions": {
+            "length_in": 33.0,
+            "width_in": 19.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT39",
+        "description": "Roll Out Tray 39\"",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 19.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "ROT42",
+        "description": "Roll Out Tray 42\"",
+        "dimensions": {
+            "length_in": 39.0,
+            "width_in": 19.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "SB24",
+        "description": "Sink Base Cabinet 24\"WX24\"DX34.5\"H",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 47.4,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SB27",
+        "description": "Sink Base Cabinet 27\"WX24\"DX34.5TH",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 48.5,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SB30",
+        "description": "Sink Base Cabinet 30\"WX24\"DX34.5\"H",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SB33",
+        "description": "Sink Base Cabinet 33\"WX24 DX34.5\"H",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SB36",
+        "description": "Sink Base Cabinet 36\"WX24\"DX34.5\"H",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 59.52,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SB42",
+        "description": "Sink Base Cabinet 42\"WX24\"DX34.5\"H",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 66.14,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SBD45",
+        "description": "Sink Diagonal Base Cabinet",
+        "dimensions": {
+            "length_in": 45.0,
+            "width_in": 45.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 56.88,
+        "assembled_dimensions": {
+            "width_in": 45.0,
+            "depth_in": 24.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "SGH15",
+        "description": "Glass Holder 15\"",
+        "dimensions": {
+            "length_in": 15.0,
+            "width_in": 12.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "SGH30",
+        "description": "Glass Holder 30\"",
+        "dimensions": {
+            "length_in": 30.0,
+            "width_in": 12.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 5.51
+    },
+    {
+        "sku": "SGH36",
+        "description": "Glass Holder 36\"",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 12.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": 4.63
+    },
+    {
+        "sku": "SHOE BASE",
+        "description": "Shoe Base Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 3.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "SM",
+        "description": "Scribe Molding",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 2.0,
+            "height_in": 2
+        },
+        "weight_lbs": 6.94
+    },
+   
+    {
+        "sku": "TK",
+        "description": "Toe Kick",
+        "dimensions": {
+            "length_in": 97.0,
+            "width_in": 6.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 50.71,
+        "pcs_per_box": 20
+    },
+    {
+        "sku": "P1884-DOOR/FRAME",
+        "description": "P1884 Door/Frame Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 84.0
+        }
+    },
+    {
+        "sku": "P1890-DOOR/FRAME",
+        "description": "P1890 Door/Frame Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 24.0,
+            "height_in": 90.0
+        }
+    },
+    {
+        "sku": "P2496-DOOR/FRAME",
+        "description": "P2496 Door/Frame Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 96.0
+        }
+    },
+    {
+        "sku": "P3084-DOOR/FRAME",
+        "description": "P3084 Door/Frame Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 84.0
+        }
+    },
+    {
+        "sku": "P3090-DOOR/FRAME",
+        "description": "P3090 Door/Frame Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 90.0
+        }
+    },
+    {
+        "sku": "P3684-DOOR/FRAME",
+        "description": "P3684 Door/Frame Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 84.0
+        }
+    },
+    {
+        "sku": "P1884",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX84\"H",
+        "weight_lbs": 116.85,
+        "assembled_dimensions": { "width_in": 18.0, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "P1884-A",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 79.37
+    },
+    {
+        "sku": "P1884-B",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 18.0, "height_in": 6.0 },
+        "weight_lbs": 37.48
+    },
+
+    {
+        "sku": "P2484",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX84\"H",
+        "weight_lbs": 146.61,
+        "assembled_dimensions": { "width_in": 24.0, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "P2484-A",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 99.21
+    },
+    {
+        "sku": "P2484-B",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 47.4
+    },
+
+    {
+        "sku": "P3084",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX84\"H",
+        "weight_lbs": 121.25,
+        "assembled_dimensions": { "width_in": 30.0, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "P3084-A",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 31.0, "height_in": 4.0 },
+        "weight_lbs": 58.42
+    },
+    {
+        "sku": "P3084-B",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 30.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 62.83
+    },
+
+    {
+        "sku": "P3684",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX84\"H",
+        "weight_lbs": 187.39,
+        "assembled_dimensions": { "width_in": 36.0, "depth_in": 24.0, "height_in": 84.0 }
+    },
+    {
+        "sku": "P3684-A",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX84\"H Part A",
+        "dimensions": { "length_in": 85.0, "width_in": 37.0, "height_in": 4.0 },
+        "weight_lbs": 116.84
+    },
+    {
+        "sku": "P3684-B",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX84\"H Part B",
+        "dimensions": { "length_in": 36.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 70.55
+    },
+
+    {
+        "sku": "P1890",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX90\"H",
+        "weight_lbs": 131.17,
+        "assembled_dimensions": { "width_in": 18.0, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "P1890-A",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 87.08
+    },
+    {
+        "sku": "P1890-B",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 18.0, "height_in": 6.0 },
+        "weight_lbs": 44.09
+    },
+
+    {
+        "sku": "P2490",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX90\"H",
+        "weight_lbs": 153.22,
+        "assembled_dimensions": { "width_in": 24.0, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "P2490-A",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 100.31
+    },
+    {
+        "sku": "P2490-B",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 52.91
+    },
+
+    {
+        "sku": "P3090",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX90\"H",
+        "weight_lbs": 176.37,
+        "assembled_dimensions": { "width_in": 30.0, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "P3090-A",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 31.0, "height_in": 4.0 },
+        "weight_lbs": 112.44
+    },
+    {
+        "sku": "P3090-B",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 30.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 63.93
+    },
+
+    {
+        "sku": "P3690",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX90\"H",
+        "weight_lbs": 198.41,
+        "assembled_dimensions": { "width_in": 36.0, "depth_in": 24.0, "height_in": 90.0 }
+    },
+    {
+        "sku": "P3690-A",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX90\"H Part A",
+        "dimensions": { "length_in": 91.0, "width_in": 37.0, "height_in": 4.0 },
+        "weight_lbs": 125.66
+    },
+    {
+        "sku": "P3690-B",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX90\"H Part B",
+        "dimensions": { "length_in": 36.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 72.75
+    },
+
+    {
+        "sku": "P1893",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX93\"H",
+        "weight_lbs": 126.77,
+        "assembled_dimensions": { "width_in": 18.0, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "P1893-A",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 85.98
+    },
+    {
+        "sku": "P1893-B",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 18.0, "height_in": 6.0 },
+        "weight_lbs": 40.79
+    },
+
+    {
+        "sku": "P2493",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX93\"H",
+        "weight_lbs": 160.94,
+        "assembled_dimensions": { "width_in": 24.0, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "P2493-A",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 104.72
+    },
+    {
+        "sku": "P2493-B",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 56.22
+    },
+
+    {
+        "sku": "P3093",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX93\"H",
+        "weight_lbs": 179.68,
+        "assembled_dimensions": { "width_in": 30.0, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "P3093-A",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 31.0, "height_in": 4.0 },
+        "weight_lbs": 110.23
+    },
+    {
+        "sku": "P3093-B",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 30.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 69.45
+    },
+
+    {
+        "sku": "P3693",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX93\"H",
+        "weight_lbs": 185.18,
+        "assembled_dimensions": { "width_in": 36.0, "depth_in": 24.0, "height_in": 93.0 }
+    },
+    {
+        "sku": "P3693-A",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX93\"H Part A",
+        "dimensions": { "length_in": 94.0, "width_in": 37.0, "height_in": 4.0 },
+        "weight_lbs": 121.25
+    },
+    {
+        "sku": "P3693-B",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX93\"H Part B",
+        "dimensions": { "length_in": 36.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 63.93
+    },
+
+    {
+        "sku": "P1896",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX96\"H",
+        "weight_lbs": 128.97,
+        "assembled_dimensions": { "width_in": 18.0, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "P1896-A",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 90.39
+    },
+    {
+        "sku": "P1896-B",
+        "description": "Tall Pantry Cabinet 18\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 18.0, "height_in": 6.0 },
+        "weight_lbs": 38.58
+    },
+
+    {
+        "sku": "P2496",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX96\"H",
+        "weight_lbs": 160.94,
+        "assembled_dimensions": { "width_in": 24.0, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "P2496-A",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 25.0, "height_in": 4.0 },
+        "weight_lbs": 103.62
+    },
+    {
+        "sku": "P2496-B",
+        "description": "Tall Pantry Cabinet 24\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 24.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 57.32
+    },
+
+    {
+        "sku": "P3096",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX96\"H",
+        "weight_lbs": 203.93,
+        "assembled_dimensions": { "width_in": 30.0, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "P3096-A",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 31.0, "height_in": 4.0 },
+        "weight_lbs": 132.28
+    },
+    {
+        "sku": "P3096-B",
+        "description": "Tall Pantry Cabinet 30\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 30.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 71.65
+    },
+
+    {
+        "sku": "P3696",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX96\"H",
+        "weight_lbs": 222.67,
+        "assembled_dimensions": { "width_in": 36.0, "depth_in": 24.0, "height_in": 96.0 }
+    },
+    {
+        "sku": "P3696-A",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX96\"H Part A",
+        "dimensions": { "length_in": 97.0, "width_in": 37.0, "height_in": 4.0 },
+        "weight_lbs": 136.69
+    },
+    {
+        "sku": "P3696-B",
+        "description": "Tall Pantry Cabinet 36\"WX24\"DX96\"H Part B",
+        "dimensions": { "length_in": 36.0, "width_in": 24.0, "height_in": 6.0 },
+        "weight_lbs": 85.98
+    },
+    {
+        "sku": "Valance 36\"",
+        "description": "Valance 36\"",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Valance 42\"",
+        "description": "Valance 42\"",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Valance 48\"",
+        "description": "Valance 48\"",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Valance 54\"",
+        "description": "Valance 54\"",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Valance 60\u00b0",
+        "description": "Valance 60\u00b0",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "Valance 66",
+        "description": "Valance 66",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "VB15",
+        "description": "Vanity base 15",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 21.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VB18",
+        "description": "Vanity base 18",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 21.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 50.27,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VB21",
+        "description": "Vanity base 21",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 22.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 50.71,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VB24",
+        "description": "Vanity base 24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 49.6,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VB27",
+        "description": "Vanity base 27",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 50,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB12",
+        "description": "VDB12",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 21.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 50.71,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB15",
+        "description": "VDB15",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 21.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 57.32,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB18",
+        "description": "VDB18",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 21.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 61.73,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB21",
+        "description": "VDB21",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 22.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 68.34,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB24",
+        "description": "VDB24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 73.85,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB24 BIG DRAWER BOX",
+        "description": "VDB24 BIG DRAWER BOX",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 0.0,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VDB24 SMALL DRAWER BOX",
+        "description": "VDB24 SMALL DRAWER BOX",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 21.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 50.71,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSB24",
+        "description": "VSB24",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 42.86,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSB27",
+        "description": "VSB27",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSB30",
+        "description": "VSB30",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 50.71,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSB33",
+        "description": "VSB33",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 53.35,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSB36",
+        "description": "VSB36",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 56.22,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD30-L",
+        "description": "VSD30-L",
+        "dimensions": {
+            "length_in": 36,
+            "width_in": 25,
+            "height_in": 4
+        },
+        "weight_lbs": 42,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD30-R",
+        "description": "VSD30-R",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 42.86,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD30L",
+        "description": "VSD30L",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 72.75,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD30R",
+        "description": "VSD30R",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 72.75,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD36-L",
+        "description": "VSD36-L",
+        "dimensions": {
+            "length_in": 36.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 53.35,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD36-R",
+        "description": "VSD36-R",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 56.22,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD36L",
+        "description": "VSD36L",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 75.62,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD36R",
+        "description": "VSD36R",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 75.62,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD42-L",
+        "description": "VSD42-L",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 83.78,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD42-R",
+        "description": "VSD42-R",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 83.78,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD42-Up Drawer",
+        "description": "VSD42-Up Drawer",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 75.62,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD48",
+        "description": "VSD48",
+        "dimensions": {
+            "length_in": 49.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 113.54,
+        "assembled_dimensions": {
+            "width_in": 48.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD54",
+        "description": "VSD54",
+        "dimensions": {
+            "length_in": 55.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 119.93,
+        "assembled_dimensions": {
+            "width_in": 54.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD60-3D",
+        "description": "VSD60-3D",
+        "dimensions": {
+            "length_in": 61.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 103.62,
+        "assembled_dimensions": {
+            "width_in": 60.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "VSD60-6D",
+        "description": "VSD60-6D",
+        "dimensions": {
+            "length_in": 61.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 132.28,
+        "assembled_dimensions": {
+            "width_in": 60.0,
+            "depth_in": 21.0,
+            "height_in": 34.5
+        }
+    },
+    {
+        "sku": "W0930",
+        "description": "W0930",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 24.25,
+        "assembled_dimensions": {
+            "width_in": 9.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W0942",
+        "description": "W0942",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 29.98,
+        "assembled_dimensions": {
+            "width_in": 9.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1212",
+        "description": "W1212",
+        "dimensions": {
+            "length_in": 13.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W1215",
+        "description": "W1215",
+        "dimensions": {
+            "length_in": 16.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1215 Glass Door Only",
+        "description": "W1215 Glass Door Only",
+        "dimensions": {
+            "length_in": 61.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 132.28,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1215G DOOR",
+        "description": "W1215G DOOR",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 24.25,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1230",
+        "description": "W1230",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 25.35,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W1230G",
+        "description": "W1230G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 27.56,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W1236",
+        "description": "W1236",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 28.66,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W1236G",
+        "description": "W1236G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 31.53,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W1242",
+        "description": "W1242",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 35.27,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1242 Glass Door Only",
+        "description": "W1242 Glass Door Only",
+        "dimensions": {
+            "length_in": null,
+            "width_in": null,
+            "height_in": null
+        },
+        "weight_lbs": 12.0,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1242G",
+        "description": "W1242G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 37.48,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1512",
+        "description": "W1512",
+        "dimensions": {
+            "length_in": 16.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W1515",
+        "description": "W1515",
+        "dimensions": {
+            "length_in": 16.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1515G DOOR",
+        "description": "W1515G DOOR",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 31.53,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1518",
+        "description": "W1518",
+        "dimensions": {
+            "length_in": 19.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W1530",
+        "description": "W1530",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 27.56,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W1530G",
+        "description": "W1530G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 40.79,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W1536",
+        "description": "W1536",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 33.07,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W1536G",
+        "description": "W1536G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 35.71,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W1542",
+        "description": "W1542",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 39.95,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1542G",
+        "description": "W1542G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 42.11,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1812",
+        "description": "W1812",
+        "dimensions": {
+            "length_in": 19.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W1815",
+        "description": "W1815",
+        "dimensions": {
+            "length_in": 19.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1815 DOOR, FRAME",
+        "description": "W1815 DOOR, FRAME",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 33.07,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1815G DOOR",
+        "description": "W1815G DOOR",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 35.71,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W1830",
+        "description": "W1830",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 19.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 31.97,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W1836",
+        "description": "W1830G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 35.05,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W1836G",
+        "description": "W1836G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 44.09,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W1842",
+        "description": "W1842",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 19.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 44.09,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W1842G",
+        "description": "W1842G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W2112",
+        "description": "W2112",
+        "dimensions": {
+            "length_in": 22.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 19.84,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W2115",
+        "description": "W2115",
+        "dimensions": {
+            "length_in": 22.0,
+            "width_in": 5.0,
+            "height_in": 22.05
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2115 Glass Door only",
+        "description": "W2115 Glass Door only",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 19.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 36.38,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2118",
+        "description": "W2118",
+        "dimensions": {
+            "length_in": 22.0,
+            "width_in": 19.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 30.2,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W2121",
+        "description": "W2121",
+        "dimensions": {
+            "length_in": 22.0,
+            "width_in": 22.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "W2130",
+        "description": "W2130",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 22.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 36.02,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W2130G",
+        "description": "W2130G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 40.79,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W2136",
+        "description": "W2136",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 22.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 41.89,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W2136G",
+        "description": "W2136G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W2142",
+        "description": "W2142",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 22.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W2142G",
+        "description": "W2142G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.47,
+        "assembled_dimensions": {
+            "width_in": 21.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W2412",
+        "description": "W2412",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 19.84,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W2415",
+        "description": "W2415",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2415 Glass Door only",
+        "description": "W2415 Glass Door only",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 22.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 41.89,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2415G DOOR",
+        "description": "W2415G DOOR",
+        "dimensions": {
+            "length_in": 15.0,
+            "width_in": 13.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2418",
+        "description": "W2418",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W2421",
+        "description": "W2421",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 26.46,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "W2424",
+        "description": "W2424",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 24.0
+        }
+    },
+    {
+        "sku": "W2430",
+        "description": "W2430",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 40.12,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W2430G",
+        "description": "W2430G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 50.71,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W2436",
+        "description": "W2436",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W2436G",
+        "description": "W2436G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 54.01,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W2442",
+        "description": "W2442",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 55.42,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W2442G",
+        "description": "W2442G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 67.24,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W2712",
+        "description": "W2712",
+        "dimensions": {
+            "length_in": 28.0,
+            "width_in": 13.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 35.27,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W2715",
+        "description": "W2715",
+        "dimensions": {
+            "length_in": 28.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 26.9,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2715 Glass Door only",
+        "description": "W2715 Glass Door only",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2715G DOOR",
+        "description": "W2715G DOOR",
+        "dimensions": {
+            "length_in": 15.0,
+            "width_in": 14.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W2718",
+        "description": "W2718",
+        "dimensions": {
+            "length_in": 28.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 40.12,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W2721",
+        "description": "W2721",
+        "dimensions": {
+            "length_in": 28.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "W2730",
+        "description": "W2730",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 44.09,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W2730G",
+        "description": "W2730G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 55.56,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W2736",
+        "description": "W2736",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.03,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W2736G",
+        "description": "W2736G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W2742",
+        "description": "W2742",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 59.52,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W2742G",
+        "description": "W2742G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 62.83,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W3012",
+        "description": "W3012",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 26.46,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W3015",
+        "description": "W3015",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 27.34,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3015 Glass Door only",
+        "description": "W3015 Glass Door only",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.03,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3015G DOOR",
+        "description": "W3015G DOOR",
+        "dimensions": {
+            "length_in": 15.0,
+            "width_in": 16.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3018",
+        "description": "W3018",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 28.66,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W3018 box and Frame Only",
+        "description": "W3018 box and Frame Only",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 62.83,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W3021",
+        "description": "W3021",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 23.37,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "W3024",
+        "description": "W3024",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 38.18,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 24.0
+        }
+    },
+    {
+        "sku": "W3030",
+        "description": "W3030",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 48.5,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3030G",
+        "description": "W3030G",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3036",
+        "description": "W3036",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3036G",
+        "description": "W3036G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 65.7,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3042",
+        "description": "W3042",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 66.14,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W3042G",
+        "description": "W3042G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 81.57,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W31 1/2 1224",
+        "description": "W31 1/2 1224",
+        "dimensions": {
+            "length_in": 32.0,
+            "width_in": 25.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 35.27,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W31",
+        "description": "1/2 1524",
+        "dimensions": {
+            "length_in": 32.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 37.48,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W31",
+        "description": "1/2 1824",
+        "dimensions": {
+            "length_in": 32.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 41.89,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W31 1/2 2124",
+        "description": "W31 1/2 2124",
+        "dimensions": {
+            "length_in": 32.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W31 1/2 2424",
+        "description": "W31 1/2 2424",
+        "dimensions": {
+            "length_in": 32.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 58.42,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3312",
+        "description": "W3312",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 25.35,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W331224",
+        "description": "W331224",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 25.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 33.95,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3315",
+        "description": "W3315",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 28.22,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W331524",
+        "description": "W3315 Glass Door only",
+        "dimensions": {
+            "length_in": 32.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 41.89,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3315G DOOR",
+        "description": "W3315G DOOR",
+        "dimensions": {
+            "length_in": 15.0,
+            "width_in": 17.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3318",
+        "description": "W3318",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 30.86,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W331824",
+        "description": "W331824",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 40.79,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3321",
+        "description": "W3321",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 35.05,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "W332124",
+        "description": "W332124",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 46.3,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3324",
+        "description": "W3324",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 41.89,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 24.0,
+            "height_in": 24.0
+        }
+    },
+    {
+        "sku": "W332424",
+        "description": "W332424",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 57.32,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3330",
+        "description": "W3330",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 31.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3330G",
+        "description": "W3330G",
+        "dimensions": {
+            "length_in": 34.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 56.22,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3336",
+        "description": "W3336",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 34.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 38.58,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3336G",
+        "description": "W3336G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 34.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 60.63,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3342",
+        "description": "W3342",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 34.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 69.45,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W3342G",
+        "description": "W3342G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 34.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 88.18,
+        "assembled_dimensions": {
+            "width_in": 33.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W3612",
+        "description": "W3612",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 27.78,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "W361224",
+        "description": "W361224",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 25.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3615",
+        "description": "W3615",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 30.42,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3615 Glass Door only",
+        "description": "W3615 Glass Door only",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 34.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 60.63,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3615G DOOR",
+        "description": "W3615G DOOR",
+        "dimensions": {
+            "length_in": 15.0,
+            "width_in": 19.0,
+            "height_in": 2.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "W3618",
+        "description": "W3618",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 31.97,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "W3621",
+        "description": "W3621",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 22.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 35.76,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "W3624",
+        "description": "W3624",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 74.96,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 24.0,
+            "height_in": 24.0
+        }
+    },
+    {
+        "sku": "W36 1/2 1224",
+        "description": "W36 1/2 1224",
+        "dimensions": {
+            "length_in": 38.0,
+            "width_in": 25.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 39.68,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W36 1/2 1524",
+        "description": "W36 1/2 1524",
+        "dimensions": {
+            "length_in": 38.0,
+            "width_in": 25.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 42.99,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W36 1/2 1824",
+        "description": "W36 1/2 1824",
+        "dimensions": {
+            "length_in": 38.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 46.08,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W36 1/2 2124",
+        "description": "W36 1/2 2124",
+        "dimensions": {
+            "length_in": 38.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 49.6,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W36 1/2 2424",
+        "description": "W36 1/2 2424",
+        "dimensions": {
+            "length_in": 38.0,
+            "width_in": 25.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 66.14,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3630",
+        "description": "W3630",
+        "dimensions": {
+            "length_in": 38.0,
+            "width_in": 32.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3630G",
+        "description": "W3630G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 61.07,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3636",
+        "description": "W3636",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 61.73,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3636G",
+        "description": "W3636G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 68.34,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3642",
+        "description": "W3642",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 76.06,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W3642G",
+        "description": "W3642G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 83.78,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W3930",
+        "description": "W3930",
+        "dimensions": {
+            "length_in": 40.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 59.52,
+        "assembled_dimensions": {
+            "width_in": 39.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W3936",
+        "description": "W3936",
+        "dimensions": {
+            "length_in": 40.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 66.14,
+        "assembled_dimensions": {
+            "width_in": 39.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W3942",
+        "description": "W3942",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 40.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 77.16,
+        "assembled_dimensions": {
+            "width_in": 39.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "W4230",
+        "description": "W4230",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 31.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 61.73,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "W4236",
+        "description": "W4236",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 70.55,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "W4242",
+        "description": "W4242",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 43.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 74.96,
+        "assembled_dimensions": {
+            "width_in": 42.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WBC2730",
+        "description": "WBC2730",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 39.68,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "WBC2736",
+        "description": "WBC2736",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 47.4,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "WBC2742",
+        "description": "WBC2742",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 54.01,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WDC2412",
+        "description": "WDC2412",
+        "dimensions": {
+            "length_in": 24.0,
+            "width_in": 24.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 12.0
+        }
+    },
+    {
+        "sku": "WDC2415",
+        "description": "WDC2415",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 37.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 70.55,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "WDC2418",
+        "description": "WDC2418",
+        "dimensions": {
+            "length_in": 24.0,
+            "width_in": 24.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 44.09,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "WDC2421",
+        "description": "WDC2421",
+        "dimensions": {
+            "length_in": 24.0,
+            "width_in": 24.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 41.01,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 21.0
+        }
+    },
+    {
+        "sku": "WDC2430",
+        "description": "WDC2430",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 24.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "WDC2430G",
+        "description": "WDC2430G",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 28.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 54.01,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "WDC2436",
+        "description": "WDC2436",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 24.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 63.05,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "WDC2436G",
+        "description": "WDC2436G",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 24.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 73.85,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "WDC2442",
+        "description": "WDC2442",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 24.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 73.85,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WDC2442G",
+        "description": "WDC2442G",
+        "dimensions": {
+            "length_in": 24.0,
+            "width_in": 24.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 41.01,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WDC2448",
+        "description": "WDC2448",
+        "dimensions": {
+            "length_in": 49.0,
+            "width_in": 24.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": null,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 48.0
+        }
+    },
+    {
+        "sku": "WEC1230",
+        "description": "WEC1230",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 12.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 48.5,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "WEC1238",
+        "description": "WEC1238",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 12.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 52.91,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 38.0
+        }
+    },
+    {
+        "sku": "WEC1242",
+        "description": "WEC1242",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 12.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 12.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WM2730",
+        "description": "WM2730",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 46.74,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "WM2736",
+        "description": "WM2736",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 60.85,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "WM2742",
+        "description": "WM2742",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 28.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 70.11,
+        "assembled_dimensions": {
+            "width_in": 27.0,
+            "depth_in": 12.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WOES0630",
+        "description": "WOES0630",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 15.43
+    },
+    {
+        "sku": "WOES0636",
+        "description": "WOES0636",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 16.53
+    },
+    {
+        "sku": "WOES0642",
+        "description": "WOES0642",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 19.18
+    },
+    {
+        "sku": "WOES0930",
+        "description": "WOES0930",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 17.64
+    },
+    {
+        "sku": "WOES0936",
+        "description": "WOES0936",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 19.62
+    },
+    {
+        "sku": "WOES0942",
+        "description": "WOES0942",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 22.93
+    },
+    {
+        "sku": "WOES1230",
+        "description": "WOES1230",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": null
+    },
+    {
+        "sku": "WOES1236",
+        "description": "WOES1236",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 13.0,
+            "height_in": 3.0
+        },
+        "weight_lbs": 26.01
+    },
+    {
+        "sku": "WOES1242",
+        "description": "WOES1242",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 13.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 28.22
+    },
+    {
+        "sku": "WPC2430",
+        "description": "WPC2430",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 25.0,
+            "height_in": 7.0
+        },
+        "weight_lbs": 55.12,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 30.0
+        }
+    },
+    {
+        "sku": "WPC2436",
+        "description": "WPC2436",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 56.66,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 36.0
+        }
+    },
+    {
+        "sku": "WPC2442",
+        "description": "WPC2442",
+        "dimensions": {
+            "length_in": 43.0,
+            "width_in": 25.0,
+            "height_in": 6.0
+        },
+        "weight_lbs": 48.81,
+        "assembled_dimensions": {
+            "width_in": 24.0,
+            "depth_in": 24.0,
+            "height_in": 42.0
+        }
+    },
+    {
+        "sku": "WR1515",
+        "description": "WR1515",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 16.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 17.64,
+        "assembled_dimensions": {
+            "width_in": 15.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "WR1818",
+        "description": "WR1818",
+        "dimensions": {
+            "length_in": 25.0,
+            "width_in": 19.0,
+            "height_in": 5.0
+        },
+        "weight_lbs": 18.74,
+        "assembled_dimensions": {
+            "width_in": 18.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "WR3015",
+        "description": "WR3015",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 21.61,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 15.0
+        }
+    },
+    {
+        "sku": "WR3018",
+        "description": "WR3018",
+        "dimensions": {
+            "length_in": 31.0,
+            "width_in": 19.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 22.49,
+        "assembled_dimensions": {
+            "width_in": 30.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    },
+    {
+        "sku": "WR3618",
+        "description": "WR3615",
+        "dimensions": {
+            "length_in": 37.0,
+            "width_in": 16.0,
+            "height_in": 4.0
+        },
+        "weight_lbs": 29.54,
+        "assembled_dimensions": {
+            "width_in": 36.0,
+            "depth_in": 12.0,
+            "height_in": 18.0
+        }
+    }
+]

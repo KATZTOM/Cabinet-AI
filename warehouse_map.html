@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>3D Warehouse Digital Twin - Corrected 5 Left Dock Doors</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+      background: #f1f5f9;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #1e293b;
+    }
+
+    .glass-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+      padding: 18px 22px;
+      z-index: 90;
+    }
+
+    #card-fleet {
+      top: 20px;
+      left: 20px;
+      width: 280px;
+    }
+
+    #card-sku-panel {
+      top: 170px;
+      left: 20px;
+      width: 320px;
+      max-height: calc(100vh - 190px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* SKU List & Tooltip styles */
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-bottom: 6px;
+    }
+
+    .card-metric {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    #sku-search-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      outline: none;
+      background: #fff;
+    }
+
+    #sku-list-container {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-right: 4px;
+    }
+
+    .sku-list-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .sku-list-item:hover {
+      border-color: #38bdf8;
+      background: #f8fafc;
+    }
+
+    .sku-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sku-item-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .sku-item-qty {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .sku-item-loc {
+      font-size: 10px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    #tooltip {
+      position: absolute;
+      display: none;
+      background: rgba(255, 255, 255, 0.95);
+      color: #0f172a;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      font-size: 12px;
+      pointer-events: none;
+      z-index: 200;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- STORAGE OCCUPANCY CARD -->
+  <div class="glass-card" id="card-fleet">
+    <div class="card-title">Storage Occupancy</div>
+    <div class="card-metric" id="metric-occupancy">0 SKUs</div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 84%;"></div>
+    </div>
+    <div style="font-size: 12px; color: #64748b; font-weight: 600;">2,470 / 2,936 Slots Occupied</div>
+  </div>
+
+  <div id="tooltip"></div>
+
+  <script>
+    let scene, camera, renderer, controls, raycaster, mouse;
+    let boxInstancedMesh = null;
+    let highlightMesh = null;
+    let allInventoryData = [];
+    const instanceDataMap = [];
+    const tooltip = document.getElementById('tooltip');
+
+    const BAY_WIDTH = 8.0;
+    const POST_W = 0.35;
+    const LEVEL_HEIGHT = 5.2;
+
+    const SHEET_MATRIX = [
+      { aisle: 38, z: 0, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 37, z: 6, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 34, z: 33, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 33, z: 39, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 30, z: 66, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 29, z: 72, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 26, z: 99, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 24, z: 119, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 23, z: 146, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 22, z: 152, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 21, z: 179, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 20, z: 185, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 19, z: 212, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 18, z: 218, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AW", "AX", "AY", "AZ"] },
+      { aisle: 13, z: 268, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 12, z: 274, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 10, z: 301, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 9, z: 307, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 7, z: 334, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 6, z: 340, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 3, z: 367, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] },
+      { aisle: 2, z: 373, bays: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AK", "AL", "AM", "AN"] }
+    ];
+
+    function bayToColNum(bayStr) {
+      let num = 0;
+      const clean = String(bayStr).toUpperCase().trim();
+      for (let i = 0; i < clean.length; i++) {
+        const code = clean.charCodeAt(i);
+        if (code >= 65 && code <= 90) num = num * 26 + (code - 64);
+      }
+      return num;
+    }
+
+    function parseLocationTo3D(locStr, slotIndexInBay = 0) {
+      if (!locStr) return null;
+      let clean = String(locStr).trim().toUpperCase();
+      clean = clean.replace(/^.*?:/g, '').trim();
+      clean = clean.replace(/[\s\-]+/g, '_');
+
+      const match = clean.match(/(\d+)_([A-Z]+)(?:_(\d+))?/);
+      if (!match) return null;
+
+      const aisle = parseInt(match[1]);
+      const bayStr = match[2];
+      const level = match[3] ? Math.min(parseInt(match[3]), 4) : 1;
+
+      const rowConfig = SHEET_MATRIX.find(r => r.aisle === aisle);
+      if (!rowConfig || !rowConfig.bays.includes(bayStr)) return null;
+
+      const localColNum = bayToColNum(bayStr);
+
+      let globalColNum = localColNum;
+      if (aisle >= 2 && aisle <= 13) {
+        if (localColNum >= 1 && localColNum <= 8) globalColNum = localColNum + 12;
+        else if (localColNum >= 11 && localColNum <= 34) globalColNum = localColNum + 12;
+        else if (localColNum >= 37 && localColNum <= 40) globalColNum = localColNum + 12;
+      }
+
+      const z = rowConfig.z;
+      const slotInTier = slotIndexInBay % 2;
+      const stackTier = Math.floor(slotIndexInBay / 2);
+
+      const baseY = (level - 1) * LEVEL_HEIGHT + 0.8;
+      const y = baseY + (stackTier * 3.4);
+
+      const slotOffsetX = (slotInTier === 0) ? -2.0 : 2.0;
+      const x = (globalColNum - 26.5) * BAY_WIDTH + slotOffsetX;
+
+      return { x, y, z };
+    }
+
+    function createRealisticBoxTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256; canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#fafafa';
+      ctx.fillRect(0, 0, 256, 256);
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(4, 4, 248, 248);
+      ctx.fillStyle = '#0284c7';
+      ctx.fillRect(16, 16, 44, 34);
+      ctx.fillStyle = '#0f172a';
+      ctx.fillRect(70, 20, 110, 8);
+      ctx.fillRect(70, 34, 80, 6);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(16, 170, 130, 60);
+      ctx.strokeStyle = '#0284c7';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(16, 170, 130, 60);
+      ctx.fillStyle = '#0284c7';
+      ctx.fillRect(24, 180, 80, 10);
+
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    function createDockDoorTexture() {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256; canvas.height = 256;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#cbd5e1';
+      ctx.fillRect(0, 0, 256, 256);
+      ctx.fillStyle = '#94a3b8';
+      for (let y = 0; y < 256; y += 16) {
+        ctx.fillRect(0, y, 256, 4);
+      }
+      ctx.fillStyle = '#64748b';
+      ctx.fillRect(0, 240, 256, 16);
+
+      return new THREE.CanvasTexture(canvas);
+    }
+
+    function init3DWorld() {
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xf1f5f9);
+
+      camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 4000);
+      camera.position.set(0, 380, 380);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2;
+
+      document.body.appendChild(renderer.domElement);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.target.set(0, 0, 180);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+
+      raycaster = new THREE.Raycaster();
+      mouse = new THREE.Vector2();
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
+      scene.add(ambientLight);
+
+      const mainSun = new THREE.DirectionalLight(0xffffff, 1.1);
+      mainSun.position.set(120, 380, 180);
+      scene.add(mainSun);
+
+      createSpatialHighlightMesh();
+      buildWarehouseEnvironment();
+      buildInstancedRacks();
+
+      window.addEventListener('resize', onWindowResize);
+      window.addEventListener('mousemove', onMouseMove);
+
+      animate();
+    }
+
+    function createSpatialHighlightMesh() {
+      const geo = new THREE.BoxGeometry(3.6, 4.8, 4.0);
+      const mat = new THREE.MeshBasicMaterial({
+        color: 0x38bdf8,
+        transparent: true,
+        opacity: 0.45,
+        side: THREE.DoubleSide
+      });
+      highlightMesh = new THREE.Mesh(geo, mat);
+      highlightMesh.visible = false;
+      scene.add(highlightMesh);
+    }
+
+    function buildOfficeDoorModel(x, y, z, isRotated = false) {
+      const group = new THREE.Group();
+      const frameMat = new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.4 });
+      const panelMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.3 });
+      const handleMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.8, roughness: 0.2 });
+
+      let frameGeo = isRotated ? new THREE.BoxGeometry(0.8, 14.5, 6.8) : new THREE.BoxGeometry(6.8, 14.5, 0.8);
+      let panelGeo = isRotated ? new THREE.BoxGeometry(0.4, 14.0, 6.2) : new THREE.BoxGeometry(6.2, 14.0, 0.4);
+      let handleGeo = isRotated ? new THREE.BoxGeometry(0.8, 0.6, 1.2) : new THREE.BoxGeometry(1.2, 0.6, 0.8);
+
+      const frame = new THREE.Mesh(frameGeo, frameMat);
+      const panel = new THREE.Mesh(panelGeo, panelMat);
+      const handle = new THREE.Mesh(handleGeo, handleMat);
+
+      if (isRotated) { handle.position.set(0.3, 0, 2.2); }
+      else { handle.position.set(2.2, 0, 0.3); }
+
+      group.add(frame); group.add(panel); group.add(handle);
+      group.position.set(x, y, z);
+      scene.add(group);
+    }
+
+    function buildContainerDockDoorModel(x, y, z, isRotated = false) {
+      const group = new THREE.Group();
+      const dockTex = createDockDoorTexture();
+      const frameMat = new THREE.MeshStandardMaterial({ color: 0x334155, roughness: 0.5 });
+      const doorMat = new THREE.MeshStandardMaterial({ map: dockTex, roughness: 0.4, metalness: 0.2 });
+      const yellowBollardMat = new THREE.MeshStandardMaterial({ color: 0xeab308, roughness: 0.3, metalness: 0.2 });
+
+      let frameGeo = isRotated ? new THREE.BoxGeometry(0.8, 17.5, 18.5) : new THREE.BoxGeometry(18.5, 17.5, 0.8);
+      let doorGeo = isRotated ? new THREE.BoxGeometry(0.4, 16.5, 17.0) : new THREE.BoxGeometry(17.0, 16.5, 0.4);
+
+      const frame = new THREE.Mesh(frameGeo, frameMat);
+      const doorPanel = new THREE.Mesh(doorGeo, doorMat);
+      if (isRotated) { doorPanel.position.set(0.1, 0, 0); }
+      else { doorPanel.position.set(0, 0, 0.1); }
+
+      let bollard1Pos = isRotated ? [1.2, -5.2, -9.8] : [-9.8, -5.2, 1.2];
+      let bollard2Pos = isRotated ? [1.2, -5.2, 9.8] : [9.8, -5.2, 1.2];
+
+      const leftBollard = new THREE.Mesh(new THREE.BoxGeometry(1.0, 6.0, 1.0), yellowBollardMat);
+      leftBollard.position.set(...bollard1Pos);
+
+      const rightBollard = new THREE.Mesh(new THREE.BoxGeometry(1.0, 6.0, 1.0), yellowBollardMat);
+      rightBollard.position.set(...bollard2Pos);
+
+      group.add(frame); group.add(doorPanel); group.add(leftBollard); group.add(rightBollard);
+      group.position.set(x, y, z);
+      scene.add(group);
+    }
+
+    function buildWarehouseEnvironment() {
+      const floorMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.6, metalness: 0.05 });
+      const floorGeo = new THREE.PlaneGeometry(850, 850);
+      const floor = new THREE.Mesh(floorGeo, floorMat);
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.set(0, 0, 180);
+      scene.add(floor);
+
+      const wallMat = new THREE.MeshStandardMaterial({ color: 0xcbd5e1, roughness: 0.6 });
+
+      const xLeftBorder = -270;
+      const xRightBorder = 210;
+      const xOfficeRight = -150;
+      const zTopBorder = -60;
+      const zBottomBorder = 415;
+      const zOfficeTop = 270;
+
+      const rightWall = new THREE.Mesh(new THREE.BoxGeometry(4, 22, zBottomBorder - zTopBorder), wallMat);
+      rightWall.position.set(xRightBorder, 11, (zTopBorder + zBottomBorder) / 2);
+      scene.add(rightWall);
+
+      const topWall = new THREE.Mesh(new THREE.BoxGeometry(xRightBorder - xLeftBorder, 22, 4), wallMat);
+      topWall.position.set((xLeftBorder + xRightBorder) / 2, 11, zTopBorder);
+      scene.add(topWall);
+
+      const zDocks = [28, 60, 92, 140, 170, 200];
+      const dockW = 18;
+
+      let lastZLeft = zTopBorder;
+      zDocks.forEach(zD => {
+        const segLen = (zD - dockW / 2) - lastZLeft;
+        const seg = new THREE.Mesh(new THREE.BoxGeometry(4, 22, segLen), wallMat);
+        seg.position.set(xLeftBorder, 11, (lastZLeft + (zD - dockW / 2)) / 2);
+        scene.add(seg);
+
+        const header = new THREE.Mesh(new THREE.BoxGeometry(4, 6, dockW), wallMat);
+        header.position.set(xLeftBorder, 19, zD);
+        scene.add(header);
+
+        buildContainerDockDoorModel(xLeftBorder, 8.0, zD, true);
+        lastZLeft = zD + dockW / 2;
+      });
+
+      const segOfficeSide = new THREE.Mesh(new THREE.BoxGeometry(4, 22, zBottomBorder - lastZLeft), wallMat);
+      segOfficeSide.position.set(xLeftBorder, 11, (lastZLeft + zBottomBorder) / 2);
+      scene.add(segOfficeSide);
+
+      const bottomWall = new THREE.Mesh(new THREE.BoxGeometry(xRightBorder - xLeftBorder, 22, 4), wallMat);
+      bottomWall.position.set((xLeftBorder + xRightBorder) / 2, 11, zBottomBorder);
+      scene.add(bottomWall);
+
+      const zDiv24 = 109;
+      const xDoorLeftRight = -208;
+      const xDoorLeftLeft = -232;
+
+      const divSeg1Len = xDoorLeftLeft - xLeftBorder;
+      const divSeg1 = new THREE.Mesh(new THREE.BoxGeometry(divSeg1Len, 22, 4), wallMat);
+      divSeg1.position.set((xLeftBorder + xDoorLeftLeft) / 2, 11, zDiv24);
+      scene.add(divSeg1);
+
+      const leftDoorHeader = new THREE.Mesh(new THREE.BoxGeometry(24, 6, 4), wallMat);
+      leftDoorHeader.position.set((xDoorLeftLeft + xDoorLeftRight) / 2, 19, zDiv24);
+      scene.add(leftDoorHeader);
+
+      const divSegMidLen = 160 - xDoorLeftRight;
+      const divSegMid = new THREE.Mesh(new THREE.BoxGeometry(divSegMidLen, 22, 4), wallMat);
+      divSegMid.position.set((xDoorLeftRight + 160) / 2, 11, zDiv24);
+      scene.add(divSegMid);
+
+      const rightDoorHeader = new THREE.Mesh(new THREE.BoxGeometry(16, 6, 4), wallMat);
+      rightDoorHeader.position.set(168, 19, zDiv24);
+      scene.add(rightDoorHeader);
+
+      const divSegRightLen = xRightBorder - 176;
+      const divSegRight = new THREE.Mesh(new THREE.BoxGeometry(divSegRightLen, 22, 4), wallMat);
+      divSegRight.position.set((176 + xRightBorder) / 2, 11, zDiv24);
+      scene.add(divSegRight);
+
+      const doorW = 12;
+      const xOffDoor1 = -200;
+      const offTopSeg1 = new THREE.Mesh(new THREE.BoxGeometry((xOffDoor1 - doorW / 2) - xLeftBorder, 22, 4), wallMat);
+      offTopSeg1.position.set((xLeftBorder + (xOffDoor1 - doorW / 2)) / 2, 11, zOfficeTop);
+      scene.add(offTopSeg1);
+
+      const offDoor1Header = new THREE.Mesh(new THREE.BoxGeometry(doorW, 6, 4), wallMat);
+      offDoor1Header.position.set(xOffDoor1, 19, zOfficeTop);
+      scene.add(offDoor1Header);
+
+      const offTopSeg2 = new THREE.Mesh(new THREE.BoxGeometry(xOfficeRight - (xOffDoor1 + doorW / 2), 22, 4), wallMat);
+      offTopSeg2.position.set(((xOffDoor1 + doorW / 2) + xOfficeRight) / 2, 11, zOfficeTop);
+      scene.add(offTopSeg2);
+
+      buildOfficeDoorModel(xOffDoor1, 7.0, zOfficeTop, false);
+
+      const zOffDoor2 = 315;
+      const offRightSeg1 = new THREE.Mesh(new THREE.BoxGeometry(4, 22, (zOffDoor2 - doorW / 2) - zOfficeTop), wallMat);
+      offRightSeg1.position.set(xOfficeRight, 11, (zOfficeTop + (zOffDoor2 - doorW / 2)) / 2);
+      scene.add(offRightSeg1);
+
+      const offDoor2Header = new THREE.Mesh(new THREE.BoxGeometry(4, 6, doorW), wallMat);
+      offDoor2Header.position.set(xOfficeRight, 19, zOffDoor2);
+      scene.add(offDoor2Header);
+
+      const offRightSeg2 = new THREE.Mesh(new THREE.BoxGeometry(4, 22, zBottomBorder - (zOffDoor2 + doorW / 2)), wallMat);
+      offRightSeg2.position.set(xOfficeRight, 11, ((zOffDoor2 + doorW / 2) + zBottomBorder) / 2);
+      scene.add(offRightSeg2);
+
+      buildOfficeDoorModel(xOfficeRight, 7.0, zOffDoor2, true);
+    }
+
+    function buildInstancedRacks() {
+      const postGeo = new THREE.BoxGeometry(POST_W, 19.0, POST_W);
+      const postMat = new THREE.MeshStandardMaterial({ color: 0x0c5228, roughness: 0.35 });
+      const beamMat = new THREE.MeshStandardMaterial({ color: 0xff4500, metalness: 0.4, roughness: 0.3 });
+      const deckMat = new THREE.MeshStandardMaterial({ color: 0x94a3b8, metalness: 0.6, roughness: 0.4 });
+
+      const postPositions = [];
+      const beamData = [];
+      const deckData = [];
+
+      SHEET_MATRIX.forEach(row => {
+        const zPos = row.z;
+        const isLowerSection = (row.aisle >= 2 && row.aisle <= 13);
+
+        let currentRun = [];
+        row.bays.forEach((bayStr, idx) => {
+          let colNum = bayToColNum(bayStr);
+          if (isLowerSection) colNum += 12;
+
+          currentRun.push(colNum);
+
+          const nextBayStr = row.bays[idx + 1];
+          let nextColNum = nextBayStr ? bayToColNum(nextBayStr) : null;
+          if (nextColNum !== null && isLowerSection) nextColNum += 12;
+
+          if (nextColNum === null || nextColNum !== colNum + 1) {
+            const startCol = currentRun[0];
+            const endCol = currentRun[currentRun.length - 1];
+
+            const xStart = (startCol - 26.5) * BAY_WIDTH - (BAY_WIDTH / 2);
+            const xEnd = (endCol - 26.5) * BAY_WIDTH + (BAY_WIDTH / 2);
+            const lengthX = xEnd - xStart;
+            const centerX = (xStart + xEnd) / 2.0;
+
+            for (let c = startCol; c <= endCol + 1; c++) {
+              const postX = (c - 0.5 - 26.5) * BAY_WIDTH;
+              [-1.8, 1.8].forEach(zOff => {
+                postPositions.push({ x: postX, y: 9.5, z: zPos + zOff });
+              });
+            }
+
+            [0.8, 6.0, 11.2, 16.4].forEach(yLvl => {
+              [-1.8, 1.8].forEach(zOff => {
+                beamData.push({ x: centerX, y: yLvl, z: zPos + zOff, lenX: lengthX });
+              });
+              deckData.push({ x: centerX, y: yLvl + 0.05, z: zPos, lenX: lengthX });
+            });
+
+            currentRun = [];
+          }
+        });
+      });
+
+      const postInstMesh = new THREE.InstancedMesh(postGeo, postMat, postPositions.length);
+      const dummy = new THREE.Object3D();
+      postPositions.forEach((pos, i) => {
+        dummy.position.set(pos.x, pos.y, pos.z);
+        dummy.updateMatrix();
+        postInstMesh.setMatrixAt(i, dummy.matrix);
+      });
+      postInstMesh.instanceMatrix.needsUpdate = true;
+      scene.add(postInstMesh);
+
+      const beamGeo = new THREE.BoxGeometry(1, 0.45, 0.30);
+      const beamInstMesh = new THREE.InstancedMesh(beamGeo, beamMat, beamData.length);
+      beamData.forEach((b, i) => {
+        dummy.position.set(b.x, b.y, b.z);
+        dummy.scale.set(b.lenX, 1, 1);
+        dummy.updateMatrix();
+        beamInstMesh.setMatrixAt(i, dummy.matrix);
+      });
+      beamInstMesh.instanceMatrix.needsUpdate = true;
+      scene.add(beamInstMesh);
+
+      const deckGeo = new THREE.BoxGeometry(1, 0.08, 3.6);
+      const deckInstMesh = new THREE.InstancedMesh(deckGeo, deckMat, deckData.length);
+      deckData.forEach((d, i) => {
+        dummy.position.set(d.x, d.y, d.z);
+        dummy.scale.set(d.lenX, 1, 1);
+        dummy.updateMatrix();
+        deckInstMesh.setMatrixAt(i, dummy.matrix);
+      });
+      deckInstMesh.instanceMatrix.needsUpdate = true;
+      scene.add(deckInstMesh);
+    }
+
+    function renderInstancedInventory(inventory) {
+      if (boxInstancedMesh) {
+        scene.remove(boxInstancedMesh);
+        boxInstancedMesh.geometry.dispose();
+        boxInstancedMesh.material.dispose();
+        boxInstancedMesh = null;
+      }
+      instanceDataMap.length = 0;
+
+      const validItems = [];
+      const locationOccupancy = {};
+
+      inventory.forEach(item => {
+        const locUpper = String(item.locationName || '').toUpperCase();
+
+        // Ignore items located in Shipping or non-rack areas
+        if (locUpper.includes('SHIPPING') || locUpper.includes('STAGE') || locUpper.includes('UNASSIGNED')) {
+          return;
+        }
+
+        const locKey = item.locationName;
+        const slotIdx = locationOccupancy[locKey] || 0;
+
+        // Only render items with valid rack coordinates
+        const pos = parseLocationTo3D(item.locationName, slotIdx);
+        if (pos) {
+          locationOccupancy[locKey] = slotIdx + 1;
+          validItems.push({ ...item, pos });
+        }
+      });
+
+      const totalValid = validItems.length;
+      if (totalValid === 0) return;
+
+      const stackGeo = new THREE.BoxGeometry(3.2, 3.2, 3.4);
+      const boxTexture = createRealisticBoxTexture();
+      const stackMat = new THREE.MeshStandardMaterial({ map: boxTexture, roughness: 0.4 });
+
+      boxInstancedMesh = new THREE.InstancedMesh(stackGeo, stackMat, totalValid);
+      const dummy = new THREE.Object3D();
+
+      validItems.forEach((item, i) => {
+        dummy.position.set(item.pos.x, item.pos.y + 1.6, item.pos.z);
+        dummy.updateMatrix();
+        boxInstancedMesh.setMatrixAt(i, dummy.matrix);
+        instanceDataMap[i] = item;
+      });
+
+      boxInstancedMesh.instanceMatrix.needsUpdate = true;
+      scene.add(boxInstancedMesh);
+    }
+
+    function renderSkuListPanel(inventoryList) {
+      const container = document.getElementById('sku-list-container');
+      const badge = document.getElementById('sku-count-badge');
+      if (!container) return;
+
+      if (badge) badge.innerText = `${inventoryList.length} Items`;
+
+      if (inventoryList.length === 0) {
+        container.innerHTML = '<div style="font-size: 11px; color: #94a3b8; text-align: center; padding: 10px;">No inventory items found</div>';
+        return;
+      }
+
+      container.innerHTML = inventoryList.map(item => `
+        <div class="sku-list-item" onclick="focusInventoryItem('${item.sku}', '${item.locationName}')">
+          <div class="sku-item-row">
+            <span class="sku-item-name">${item.sku}</span>
+            <span class="sku-item-qty">${item.qty} units</span>
+          </div>
+          <div class="sku-item-row">
+            <span class="sku-item-loc">LOC: ${item.locationName}</span>
+            <span style="font-size: 10px; color: #94a3b8; max-width: 140px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.description || ''}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterSkuList(query) {
+      const q = String(query || '').toLowerCase().trim();
+      if (!q) {
+        renderSkuListPanel(allInventoryData);
+        return;
+      }
+      const filtered = allInventoryData.filter(i =>
+        String(i.sku || '').toLowerCase().includes(q) ||
+        String(i.locationName || '').toLowerCase().includes(q) ||
+        String(i.description || '').toLowerCase().includes(q)
+      );
+      renderSkuListPanel(filtered);
+    }
+
+    function focusInventoryItem(sku, locationName) {
+      const foundIdx = instanceDataMap.findIndex(i => i && i.sku === sku && i.locationName === locationName);
+      if (foundIdx !== -1 && instanceDataMap[foundIdx]) {
+        const item = instanceDataMap[foundIdx];
+        highlightMesh.position.set(item.pos.x, item.pos.y + 1.6, item.pos.z);
+        highlightMesh.visible = true;
+
+        controls.target.set(item.pos.x, item.pos.y + 1.6, item.pos.z);
+        camera.position.set(item.pos.x + 30, item.pos.y + 25, item.pos.z + 40);
+        controls.update();
+
+        tooltip.style.display = 'block';
+        tooltip.style.left = '360px';
+        tooltip.style.top = '180px';
+        tooltip.innerHTML = `
+          <strong>${item.sku}</strong>
+          <span class="badge-loc">LOC: ${item.locationName}</span><br>
+          📦 <b>Quantity:</b> ${item.qty} units<br>
+          📝 <i>${item.description || ''}</i>
+        `;
+      }
+    }
+
+    async function fetchAndRenderInventory() {
+      try {
+        const res = await fetch('/api/warehouse/inventory');
+        const data = await res.json();
+        if (data.success && Array.isArray(data.inventory)) {
+          allInventoryData = data.inventory;
+          renderInstancedInventory(allInventoryData);
+          renderSkuListPanel(allInventoryData);
+        }
+      } catch (err) {
+        console.error('Error fetching inventory from Fishbowl:', err);
+      }
+    }
+
+    function onMouseMove(event) {
+      if (!boxInstancedMesh) return;
+
+      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObject(boxInstancedMesh);
+
+      if (intersects.length > 0) {
+        const instanceId = intersects[0].instanceId;
+        const data = instanceDataMap[instanceId];
+
+        if (data) {
+          highlightMesh.position.set(data.pos.x, data.pos.y + 1.6, data.pos.z);
+          highlightMesh.visible = true;
+
+          tooltip.style.display = 'block';
+          tooltip.style.left = (event.clientX + 14) + 'px';
+          tooltip.style.top = (event.clientY + 14) + 'px';
+          tooltip.innerHTML = `
+            <strong>${data.sku}</strong>
+            <span class="badge-loc">LOC: ${data.locationName}</span><br>
+            📦 <b>Quantity:</b> ${data.qty} units<br>
+            📝 <i>${data.description || ''}</i>
+          `;
+        }
+      } else {
+        highlightMesh.visible = false;
+        tooltip.style.display = 'none';
+      }
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    init3DWorld();
+    fetchAndRenderInventory();
+  </script>
+</body>
+
+</html>
